@@ -1,0 +1,11 @@
+.navbar .container{
+    border: 2px solid red;
+}
+
+.iunda{
+    background-color: red;
+    width: 100%;
+    border-radius: 100px;
+    height: 300px;
+    padding: 20px 20px;
+}
