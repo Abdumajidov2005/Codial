@@ -164,7 +164,12 @@
   align-items: center;
   justify-content: space-between;
   padding: 10px 0px;
-  border-bottom: 1px solid #0092ff;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1),
+    inset -2px -2px 5px rgba(255, 255, 255, 0.7),
+    3px 3px 8px rgba(0, 0, 0, 0.15), -2px -2px 5px rgba(255, 255, 255, 0.8);
 }
 
 .enter-data-titles li {
@@ -174,7 +179,7 @@
 }
 
 .personal-circut {
-  height: 440px;
+  height: 436px;
   overflow-y: scroll;
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -185,14 +190,69 @@
 }
 
 .enter-data-personal {
+  width: 99.8%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 10px;
+  border-radius: 6px;
+  background-color: #ffffff;
+  margin-bottom: 10px;
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1),
+    inset -2px -2px 5px rgba(255, 255, 255, 0.7),
+    3px 3px 8px rgba(0, 0, 0, 0.15), -2px -2px 5px rgba(255, 255, 255, 0.8);
 }
 
 .enter-data-personal li {
   width: 14%;
   text-align: center;
-  padding: 10px 0px;
+  padding: 14px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.enter-data-personal li:nth-child(5) p {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #0092ff;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.enter-data-personal li:nth-child(6) p {
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  background-color: #ffc942;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.enter-data-personal li:nth-child(6) p svg {
+  position: absolute;
+  top: -3px;
+  right: -4px;
+  color: #000;
+  font-size: 25px;
+}
+
+.enter-data-personal li:nth-child(7) p {
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }

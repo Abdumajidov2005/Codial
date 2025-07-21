@@ -1,11 +1,14 @@
 import React from "react";
 import "./Sidebar.css";
-import { MdGroups, MdHome } from "react-icons/md";
-import { Link, NavLink } from "react-router-dom";
+import { MdGroups, MdHome, MdManageAccounts } from "react-icons/md";
+import { NavLink } from "react-router-dom";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { GrSchedules } from "react-icons/gr";
 import { RiAuctionFill } from "react-icons/ri";
 import { IoNewspaperSharp } from "react-icons/io5";
+import { GiTeacher } from "react-icons/gi";
+import { PiStudent } from "react-icons/pi";
+import { LuNotebookPen } from "react-icons/lu";
 
 function Sidebar({ sidebar, setSidebar }) {
   return (
@@ -29,8 +32,20 @@ function Sidebar({ sidebar, setSidebar }) {
           <NavLink to={"/"}>
             <MdHome /> <span>Bosh Sahifa</span>
           </NavLink>
+          <NavLink to={"/managers"}>
+            <MdManageAccounts /> <span>Menejerlar</span>
+          </NavLink>
           <NavLink to={"/groups"}>
             <MdGroups /> <span>Guruhlar</span>
+          </NavLink>
+          <NavLink to={"/teachers"}>
+            <GiTeacher /> <span>O'qituvchilar</span>
+          </NavLink>
+          <NavLink to={"/students"}>
+            <PiStudent /> <span>O'quvchilar</span>
+          </NavLink>
+          <NavLink to={"/davomat"}>
+           <LuNotebookPen />  <span>Davomat</span>
           </NavLink>
           <NavLink to={"/schedule"}>
             <GrSchedules /> <span>Dars Jadvali</span>

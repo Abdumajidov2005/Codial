@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import "./Groups.css";
 import { LuCirclePlus } from "react-icons/lu";
+import { FaInfo } from "react-icons/fa";
+import { GrEdit } from "react-icons/gr";
+import { BsTrash3Fill } from "react-icons/bs";
 
 function Groups({ sidebar }) {
   const [groupsModal, setGroupsModal] = useState(false);
@@ -68,109 +71,44 @@ function Groups({ sidebar }) {
                 <li>Asadbek</li>
                 <li>Gurux</li>
                 <li>3</li>
-                <li>Batafsil</li>
-                <li>O'zgartirish</li>
-                <li>O'chirish</li>
-              </ul>
-               <ul className="enter-data-personal">
-                <li>Frontend</li>
-                <li>Asadbek</li>
-                <li>Gurux</li>
-                <li>3</li>
-                <li>Batafsil</li>
-                <li>O'zgartirish</li>
-                <li>O'chirish</li>
-              </ul>
-               <ul className="enter-data-personal">
-                <li>Frontend</li>
-                <li>Asadbek</li>
-                <li>Gurux</li>
-                <li>3</li>
-                <li>Batafsil</li>
-                <li>O'zgartirish</li>
-                <li>O'chirish</li>
-              </ul>
-               <ul className="enter-data-personal">
-                <li>Frontend</li>
-                <li>Asadbek</li>
-                <li>Gurux</li>
-                <li>3</li>
-                <li>Batafsil</li>
-                <li>O'zgartirish</li>
-                <li>O'chirish</li>
-              </ul>
-               <ul className="enter-data-personal">
-                <li>Frontend</li>
-                <li>Asadbek</li>
-                <li>Gurux</li>
-                <li>3</li>
-                <li>Batafsil</li>
-                <li>O'zgartirish</li>
-                <li>O'chirish</li>
-              </ul>
-               <ul className="enter-data-personal">
-                <li>Frontend</li>
-                <li>Asadbek</li>
-                <li>Gurux</li>
-                <li>3</li>
-                <li>Batafsil</li>
-                <li>O'zgartirish</li>
-                <li>O'chirish</li>
-              </ul>
-               <ul className="enter-data-personal">
-                <li>Frontend</li>
-                <li>Asadbek</li>
-                <li>Gurux</li>
-                <li>3</li>
-                <li>Batafsil</li>
-                <li>O'zgartirish</li>
-                <li>O'chirish</li>
-              </ul>
-               <ul className="enter-data-personal">
-                <li>Frontend</li>
-                <li>Asadbek</li>
-                <li>Gurux</li>
-                <li>3</li>
-                <li>Batafsil</li>
-                <li>O'zgartirish</li>
-                <li>O'chirish</li>
-              </ul>
-               <ul className="enter-data-personal">
-                <li>Frontend</li>
-                <li>Asadbek</li>
-                <li>Gurux</li>
-                <li>3</li>
-                <li>Batafsil</li>
-                <li>O'zgartirish</li>
-                <li>O'chirish</li>
+                <li>
+                  <p>
+                    <FaInfo />
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <GrEdit />
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <BsTrash3Fill />
+                  </p>
+                </li>
               </ul>
               <ul className="enter-data-personal">
                 <li>Frontend</li>
                 <li>Asadbek</li>
                 <li>Gurux</li>
                 <li>3</li>
-                <li>Batafsil</li>
-                <li>O'zgartirish</li>
-                <li>O'chirish</li>
+                <li>
+                  <p>
+                    <FaInfo />
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <GrEdit />
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <BsTrash3Fill />
+                  </p>
+                </li>
               </ul>
-               <ul className="enter-data-personal">
-                <li>Frontend</li>
-                <li>Asadbek</li>
-                <li>Gurux</li>
-                <li>3</li>
-                <li>Batafsil</li>
-                <li>O'zgartirish</li>
-                <li>O'chirish</li>
-              </ul>
-               <ul className="enter-data-personal">
-                <li>Frontend</li>
-                <li>Asadbek</li>
-                <li>Gurux</li>
-                <li>3</li>
-                <li>Batafsil</li>
-                <li>O'zgartirish</li>
-                <li>O'chirish</li>
-              </ul>
+             
             </div>
           </div>
         </div>
