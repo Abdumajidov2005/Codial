@@ -48,8 +48,8 @@ function Groups({ sidebar }) {
                 <option value="">O'tkirbek</option>
               </select>
               <div className="type-groups">
-                <p>Bitiruvchilar</p>
-                <p>Yangi</p>
+                <p>Bitiruvchi guruhlar</p>
+                <p>Yangi guruhlar</p>
                 <p>Gurux</p>
                 <p>Individual</p>
               </div>

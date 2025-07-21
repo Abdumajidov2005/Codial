@@ -15,8 +15,11 @@
   width: 400px;
   display: flex;
   align-items: center;
-  border: 2px solid #0092ff;
   border-radius: 5px;
+  background-color: #ffffff;
+  box-shadow:
+    inset 3px 3px 10px rgba(0, 0, 0, 0.1),
+    inset -2px -2px 5px rgba(255, 255, 255, 0.7);
 }
 
 .searchs:hover {
@@ -115,12 +118,16 @@
   align-items: center;
   background-color: #FFFFFF;
   justify-content: space-between;
-  border: 2px solid #0092FF;
+  /* border: 2px solid #0092FF; */
   width: 240px;
   padding: 3px;
   border-radius: 10px;
   cursor: pointer;
   transition: all .3s ease;
+    background-color: #ffffff;
+  box-shadow:
+    inset 3px 3px 10px rgba(0, 0, 0, 0.1),
+    inset -2px -2px 5px rgba(255, 255, 255, 0.7);
 }
 
 .user-admin:hover{
