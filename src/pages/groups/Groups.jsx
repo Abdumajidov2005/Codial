@@ -24,35 +24,153 @@ function Groups({ sidebar }) {
           >
             Bekor Qilish
           </button>
-          <button type="submit">
-            Qo'shish
-          </button>
+          <button type="submit">Qo'shish</button>
         </form>
       </div>
 
       <div className="groups">
         <div className={`container ${sidebar ? "actives" : ""}`}>
-          <div className="variable">
-            <div className="addition">
-              <button
-                onClick={() => {
-                  setGroupsModal(true);
-                }}
-              >
-                <LuCirclePlus /> Qo'shish
-              </button>
-              <select name="" id="">
-                <option value="">Barcha o'qituvchilar</option>
-                <option value="">O'tkirbek</option>
-                <option value="">O'tkirbek</option>
-                <option value="">O'tkirbek</option>
-              </select>
-              <div className="type-groups">
-                <p>Bitiruvchi guruhlar</p>
-                <p>Yangi guruhlar</p>
-                <p>Gurux</p>
-                <p>Individual</p>
-              </div>
+          <div className="addition">
+            <button
+              onClick={() => {
+                setGroupsModal(true);
+              }}
+            >
+              <LuCirclePlus /> Qo'shish
+            </button>
+            <select name="" id="">
+              <option value="">Barcha o'qituvchilar</option>
+              <option value="">O'tkirbek</option>
+              <option value="">O'tkirbek</option>
+              <option value="">O'tkirbek</option>
+            </select>
+            <div className="type-groups">
+              <p>Bitiruvchi guruhlar</p>
+              <p>Yangi guruhlar</p>
+              <p>Gurux</p>
+              <p>Individual</p>
+            </div>
+          </div>
+
+          <div className="enter-data">
+            <ul className="enter-data-titles">
+              <li>Gurux nomi</li>
+              <li>Masul o'qituvchi</li>
+              <li>Tarifi</li>
+              <li>O'quvchilar soni</li>
+              <li>Batafsil</li>
+              <li>O'zgartirish</li>
+              <li>O'chirish</li>
+            </ul>
+            <div className="personal-circut">
+              <ul className="enter-data-personal">
+                <li>Frontend</li>
+                <li>Asadbek</li>
+                <li>Gurux</li>
+                <li>3</li>
+                <li>Batafsil</li>
+                <li>O'zgartirish</li>
+                <li>O'chirish</li>
+              </ul>
+               <ul className="enter-data-personal">
+                <li>Frontend</li>
+                <li>Asadbek</li>
+                <li>Gurux</li>
+                <li>3</li>
+                <li>Batafsil</li>
+                <li>O'zgartirish</li>
+                <li>O'chirish</li>
+              </ul>
+               <ul className="enter-data-personal">
+                <li>Frontend</li>
+                <li>Asadbek</li>
+                <li>Gurux</li>
+                <li>3</li>
+                <li>Batafsil</li>
+                <li>O'zgartirish</li>
+                <li>O'chirish</li>
+              </ul>
+               <ul className="enter-data-personal">
+                <li>Frontend</li>
+                <li>Asadbek</li>
+                <li>Gurux</li>
+                <li>3</li>
+                <li>Batafsil</li>
+                <li>O'zgartirish</li>
+                <li>O'chirish</li>
+              </ul>
+               <ul className="enter-data-personal">
+                <li>Frontend</li>
+                <li>Asadbek</li>
+                <li>Gurux</li>
+                <li>3</li>
+                <li>Batafsil</li>
+                <li>O'zgartirish</li>
+                <li>O'chirish</li>
+              </ul>
+               <ul className="enter-data-personal">
+                <li>Frontend</li>
+                <li>Asadbek</li>
+                <li>Gurux</li>
+                <li>3</li>
+                <li>Batafsil</li>
+                <li>O'zgartirish</li>
+                <li>O'chirish</li>
+              </ul>
+               <ul className="enter-data-personal">
+                <li>Frontend</li>
+                <li>Asadbek</li>
+                <li>Gurux</li>
+                <li>3</li>
+                <li>Batafsil</li>
+                <li>O'zgartirish</li>
+                <li>O'chirish</li>
+              </ul>
+               <ul className="enter-data-personal">
+                <li>Frontend</li>
+                <li>Asadbek</li>
+                <li>Gurux</li>
+                <li>3</li>
+                <li>Batafsil</li>
+                <li>O'zgartirish</li>
+                <li>O'chirish</li>
+              </ul>
+               <ul className="enter-data-personal">
+                <li>Frontend</li>
+                <li>Asadbek</li>
+                <li>Gurux</li>
+                <li>3</li>
+                <li>Batafsil</li>
+                <li>O'zgartirish</li>
+                <li>O'chirish</li>
+              </ul>
+              <ul className="enter-data-personal">
+                <li>Frontend</li>
+                <li>Asadbek</li>
+                <li>Gurux</li>
+                <li>3</li>
+                <li>Batafsil</li>
+                <li>O'zgartirish</li>
+                <li>O'chirish</li>
+              </ul>
+               <ul className="enter-data-personal">
+                <li>Frontend</li>
+                <li>Asadbek</li>
+                <li>Gurux</li>
+                <li>3</li>
+                <li>Batafsil</li>
+                <li>O'zgartirish</li>
+                <li>O'chirish</li>
+              </ul>
+               <ul className="enter-data-personal">
+                <li>Frontend</li>
+                <li>Asadbek</li>
+                <li>Gurux</li>
+                <li>3</li>
+                <li>Batafsil</li>
+                <li>O'zgartirish</li>
+                <li>O'chirish</li>
+              </ul>
             </div>
           </div>
         </div>
