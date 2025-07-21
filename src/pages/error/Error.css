@@ -1,0 +1,27 @@
+.container.active{
+    margin-left: 140px;
+}
+
+.error .variable{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.error h1{
+    font-size: 200px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.error h1 span:nth-child(2){
+    color: orange;
+}
+
+.error p{
+    font-size: 16px;
+    font-weight: 500;
+    color: #03045e;
+}

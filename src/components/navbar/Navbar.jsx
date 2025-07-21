@@ -1,21 +1,42 @@
-import React from 'react'
-import "./Navbar.css"
+import React from "react";
+import "./Navbar.css";
+import { RiSearchLine } from "react-icons/ri";
+import { BiBell } from "react-icons/bi";
 
-function Navbar() {
+function Navbar({ sidebar }) {
   return (
     <>
       <div className="navbar">
-         <div className="container">
-             <div className="iunda">
-                 <h1>
-                    salom
-                 </h1>
-                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur rerum ratione doloribus, totam eaque aspernatur explicabo, animi cumque eveniet consequuntur omnis. Aperiam accusantium aliquid voluptate eos, harum exercitationem praesentium tenetur laboriosam. Ut qui iusto neque voluptatem nulla laborum veniam eaque, nesciunt possimus sint velit explicabo perferendis. Cum enim, rerum officiis optio est expedita recusandae quisquam! Saepe quas sequi facilis atque perferendis fugiat, eos minima minus fugit corporis quam eaque eveniet deserunt explicabo maiores voluptate molestiae tenetur ullam, iste aliquid alias excepturi impedit cupiditate. Quibusdam molestiae accusantium dignissimos totam laborum id deserunt veritatis nesciunt odit quod! Aliquid laborum eligendi sint odit.</p>
-             </div>
-         </div>
+        <div className={`container ${sidebar ? "active" : ""}`}>
+          <div className="searchs">
+            <label htmlFor="search">
+              <RiSearchLine />
+            </label>
+            <input id="search" type="text" placeholder="Qidiruv..." />
+            <select name="" id="">
+              <option value="">Guruhlar</option>
+              <option value="">O'qituvchilar</option>
+              <option value="">O'quvchilar</option>
+            </select>
+          </div>
+          <div className="users">
+            <div className="bell">
+              <BiBell />
+            </div>
+            <div className="user-admin">
+                <div className="admin-img">
+                  <img src="/imgs/adin.avif" alt="" />
+                </div>
+                <p>
+                  <span>Abdumajidov O'tkirbek</span>
+                  <span>manager</span>
+                </p>
+            </div>
+          </div>
+        </div>
       </div>
     </>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;

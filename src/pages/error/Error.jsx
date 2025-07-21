@@ -1,10 +1,23 @@
 import React from 'react';
 import './Error.css';
 
-const Error = () => {
+const Error = ({sidebar}) => {
   return (
   <>
-  eroor
+     <div className="error">
+        <div className={`container ${sidebar ? "actives" : ""}`}>
+          <div className="variable">
+            <h1>
+              <span>4</span>
+              <span>0</span>
+              <span>4</span>
+            </h1>
+            <p>
+              Sahifa topilmadi iltimos qaytadan urinib ko'ring
+            </p>
+          </div>
+        </div>
+      </div>
   </>
   );
 };
