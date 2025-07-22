@@ -12,6 +12,7 @@ import Managers from "../managers/Managers";
 import Teachers from "../teachers/Teachers";
 import Students from "../students/Students";
 import Davomat from "../davomat/Davomat";
+import Login from "../login/Login";
 
 function RouterDom() {
   const [sidebar, setSidebar] = useState(false);
@@ -19,6 +20,7 @@ function RouterDom() {
   return (
     <>
       <BrowserRouter>
+       {/* <Login/> */}
         <Navbar sidebar={sidebar} />
         <Sidebar sidebar={sidebar} setSidebar={setSidebar} />
         <Routes>

@@ -18,7 +18,19 @@ function Groups({ sidebar }) {
           }}
           action=""
         >
-          <input type="text" placeholder="name" />
+          <h2>Gurux qo'shish</h2>
+          <input type="text" placeholder="Gurux nomi :" />
+          <select name="" id="">
+            <option value="">
+              O’qituvchini belgilang
+            </option>
+            <option value="">Asadbek</option>
+            <option value="">Asadbek</option>
+          </select>
+          <select name="" id="">
+            <option value="">Tarifini belgilang</option>
+            <option value="">Gurux</option>
+          </select>
           <button
             type="button"
             onClick={() => {
@@ -65,7 +77,7 @@ function Groups({ sidebar }) {
               <li>O'zgartirish</li>
               <li>O'chirish</li>
             </ul>
-            <div className="personal-circut">
+            <div className="variable">
               <ul className="enter-data-personal">
                 <li>Frontend</li>
                 <li>Asadbek</li>

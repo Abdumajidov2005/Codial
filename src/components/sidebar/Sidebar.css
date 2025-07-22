@@ -90,6 +90,10 @@
   color: #FFFFFF;
 }
 
+.logo h1 span{
+  color: #FFC942;
+}
+
 .sidebar.active .logo h1 {
   display: none;
 }

@@ -26,7 +26,7 @@ function Sidebar({ sidebar, setSidebar }) {
           <div className="logo-codial">
             <img src="/imgs/image.png" alt="" />
           </div>
-          <h1>Codial</h1>
+          <h1>Codi<span>a</span>l</h1>
         </NavLink>
         <ul className="links">
           <NavLink to={"/"}>
