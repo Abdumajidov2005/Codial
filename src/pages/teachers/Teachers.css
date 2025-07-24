@@ -1,11 +1,14 @@
 .additionn{
-    margin: 29px 20px;
+  margin-top: 45px;
+  margin-bottom: 20px;
+  margin-left: 20px;
 }
 
 .additionn button {
-  padding: 15px 32px;
+  padding: 10px 20px;
   border: none;
   font-size: 17px;
+  font-weight: 500;
   border-radius: 8px;
   background-color: #0092ff;
   color: #ffffff;
@@ -63,16 +66,6 @@
   padding: 10px 0px;
 }
 
-/* .personal-circut {
-  height: 436px;
-  overflow-y: scroll;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-.personal-circut::-webkit-scrollbar {
-  display: none;
-} */
 
 .enter-data-teach-person {
   width: 99.8%;

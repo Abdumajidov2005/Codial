@@ -30,6 +30,7 @@ function Groups({ sidebar }) {
           <select name="" id="">
             <option value="">Tarifini belgilang</option>
             <option value="">Gurux</option>
+            <option value="">Individual</option>
           </select>
           <button
             type="button"
