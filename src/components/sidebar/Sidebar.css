@@ -9,9 +9,10 @@
   padding-right: 10px;
   filter: drop-shadow(0px 4px 8px rgba(0, 146, 255, 0.15));
   position: fixed;
+  z-index: 999;
   top: 5px;
   left: 10px;
-  transition: all 0.3s ease;
+  transition: all .4s ease;
 }
 
 .sidebar.active {
@@ -23,12 +24,12 @@
 .dashboard {
   position: absolute;
   top: 45px;
-  right: -14px;  
+  right: -10px;  
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: #0092FF; 
-  color: #FFFFFF;
+  background-color: #fff; 
+  color: #1E537D;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -36,11 +37,10 @@
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 
-    0px 8px 15px rgba(0, 146, 255, 0.4),      /* tashqi ko‘k nurlar */
+    0px 8px 15px rgba(235, 236, 237, 0.4),      /* tashqi ko‘k nurlar */
     inset 0px 2px 4px rgba(255, 255, 255, 0.1),/* ustki ichki yoritish */
     inset 0px -2px 4px rgba(0, 0, 0, 0.3);     /* pastki ichki chuqurlik */
   animation: sidebar-animate 2s linear infinite;
-
 }
 
 .dashboard:hover {
@@ -81,13 +81,19 @@
   cursor: pointer;
   margin-bottom: 20px;
   text-decoration: none;
+  position: relative;
+  transition: all .4s ease;
+  z-index: -1;
 }
 
 .logo h1 {
+  position: absolute;
+  left: 50px;
   font-size: 35px;
   font-weight: 700;
   /* color: #03045e; */
-  color: #000;
+  color: #1E537D;
+  transform: scale(1);
 }
 
 .logo h1 span{
@@ -95,7 +101,7 @@
 }
 
 .sidebar.active .logo h1 {
-  display: none;
+  transform: scale(0);
 }
 
 .logo .logo-codial {
@@ -107,10 +113,11 @@
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
+  transform: translateX(0px);
 }
 
 .sidebar.active .logo .logo-codial {
-  margin: 0 auto;
+  transform: translateX(30px);
 }
 
 .logo-codial img {
@@ -127,25 +134,25 @@
   padding: 7px 7px;
   cursor: pointer;
   display: flex;
-  align-items: center;
   gap: 10px;
-  /* color: #03045e; */
-  color: #4d4c4c;
+  color: #1E537D;
   text-decoration: none;
   width: 250px;
   border-radius: 4px;
-  transition: all 0.3s ease;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
 }
 
 .sidebar .links a.active {
-  background-color: #FFC942;
-  color: #000000;
+  background-color: #1E537D;
+  color: #fff;
 }
 
 .sidebar .links a:hover {
-  background-color: #E8AC18;
+  background-color: #286fa9;
   transform: scale(1.05);
-  color: #000000;
+  color: #fff;
 }
 
 .sidebar.active .links a {
@@ -157,14 +164,27 @@
   justify-content: center;
 }
 
-.sidebar.active span {
-  display: none;
+.links a span{
+  display: inline-block;
+  position: absolute;
+  left: 40px;
+  top: 10px;
+  transform: translateX(0px);
+  transition: all .4s ease;
+}
+
+.sidebar.active .links a span {
+  transform: translateX(100px);
 }
 
 .links a svg {
   font-size: 25px;
+  transform: translateX(0px);
+  transition: all .4s ease;
+  display: inline-block;
+
 }
 
 .sidebar.active .links a svg {
-  margin: 0 auto;
+  transform: translateX(5px);
 }

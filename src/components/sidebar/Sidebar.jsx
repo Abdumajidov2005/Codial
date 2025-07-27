@@ -9,6 +9,7 @@ import { IoNewspaperSharp } from "react-icons/io5";
 import { GiTeacher } from "react-icons/gi";
 import { PiStudent } from "react-icons/pi";
 import { LuNotebookPen } from "react-icons/lu";
+import { FiUserPlus } from "react-icons/fi";
 
 function Sidebar({ sidebar, setSidebar }) {
   return (
@@ -32,6 +33,9 @@ function Sidebar({ sidebar, setSidebar }) {
           <NavLink to={"/"}>
             <MdHome /> <span>Bosh Sahifa</span>
           </NavLink>
+          <NavLink to={"/lids"}>
+             <FiUserPlus /> <span>Lids</span>
+          </NavLink>
           <NavLink to={"/managers"}>
             <MdManageAccounts /> <span>Menejerlar</span>
           </NavLink>
@@ -54,7 +58,7 @@ function Sidebar({ sidebar, setSidebar }) {
             <RiAuctionFill /> <span>Auksionlar</span>
           </NavLink>
           <NavLink to={"/notice"}>
-            <IoNewspaperSharp/> <span>Yangiliklar va e'lonlar</span>
+            <IoNewspaperSharp/> <span>Yangilik va e'lonlar</span>
           </NavLink>
         </ul>
       </div>

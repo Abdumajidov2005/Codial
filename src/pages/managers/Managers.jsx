@@ -69,6 +69,141 @@ function Managers({ sidebar }) {
                   </p>
                 </li>
               </ul>
+              <ul className="enter-data-managers-found">
+                <li>O'tkirbek</li>
+                <li>O'tkirbek</li>
+                <li>otkirbek1234</li>
+                <li>
+                  <p>
+                    <GrEdit />
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <BsTrash3Fill />
+                  </p>
+                </li>
+              </ul>
+              <ul className="enter-data-managers-found">
+                <li>O'tkirbek</li>
+                <li>O'tkirbek</li>
+                <li>otkirbek1234</li>
+                <li>
+                  <p>
+                    <GrEdit />
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <BsTrash3Fill />
+                  </p>
+                </li>
+              </ul>
+              <ul className="enter-data-managers-found">
+                <li>O'tkirbek</li>
+                <li>O'tkirbek</li>
+                <li>otkirbek1234</li>
+                <li>
+                  <p>
+                    <GrEdit />
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <BsTrash3Fill />
+                  </p>
+                </li>
+              </ul>
+              <ul className="enter-data-managers-found">
+                <li>O'tkirbek</li>
+                <li>O'tkirbek</li>
+                <li>otkirbek1234</li>
+                <li>
+                  <p>
+                    <GrEdit />
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <BsTrash3Fill />
+                  </p>
+                </li>
+              </ul>
+              <ul className="enter-data-managers-found">
+                <li>O'tkirbek</li>
+                <li>O'tkirbek</li>
+                <li>otkirbek1234</li>
+                <li>
+                  <p>
+                    <GrEdit />
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <BsTrash3Fill />
+                  </p>
+                </li>
+              </ul>
+              <ul className="enter-data-managers-found">
+                <li>O'tkirbek</li>
+                <li>O'tkirbek</li>
+                <li>otkirbek1234</li>
+                <li>
+                  <p>
+                    <GrEdit />
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <BsTrash3Fill />
+                  </p>
+                </li>
+              </ul>
+              <ul className="enter-data-managers-found">
+                <li>O'tkirbek</li>
+                <li>O'tkirbek</li>
+                <li>otkirbek1234</li>
+                <li>
+                  <p>
+                    <GrEdit />
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <BsTrash3Fill />
+                  </p>
+                </li>
+              </ul>
+              <ul className="enter-data-managers-found">
+                <li>O'tkirbek</li>
+                <li>O'tkirbek</li>
+                <li>otkirbek1234</li>
+                <li>
+                  <p>
+                    <GrEdit />
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <BsTrash3Fill />
+                  </p>
+                </li>
+              </ul>
+              <ul className="enter-data-managers-found">
+                <li>O'tkirbek</li>
+                <li>O'tkirbek</li>
+                <li>otkirbek1234</li>
+                <li>
+                  <p>
+                    <GrEdit />
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <BsTrash3Fill />
+                  </p>
+                </li>
+              </ul>
             </div>
           </div>
         </div>

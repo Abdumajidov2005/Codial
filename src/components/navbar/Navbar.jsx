@@ -2,6 +2,7 @@ import React from "react";
 import "./Navbar.css";
 import { RiSearchLine } from "react-icons/ri";
 import { BiBell } from "react-icons/bi";
+import { Link } from "react-router-dom";
 
 function Navbar({ sidebar }) {
   return (
@@ -20,9 +21,9 @@ function Navbar({ sidebar }) {
             </select>
           </div>
           <div className="users">
-            <div className="bell">
+            <Link to={"/notice"} className="bell">
               <BiBell />
-            </div>
+            </Link>
             <div className="user-admin">
                 <div className="admin-img">
                   <img src="/imgs/adin.avif" alt="" />

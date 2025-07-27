@@ -13,6 +13,7 @@ import Teachers from "../teachers/Teachers";
 import Students from "../students/Students";
 import Davomat from "../davomat/Davomat";
 import Login from "../login/Login";
+import Lids from "../lidlar/Lids";
 
 function RouterDom() {
   const [sidebar, setSidebar] = useState(false);
@@ -25,6 +26,7 @@ function RouterDom() {
         <Sidebar sidebar={sidebar} setSidebar={setSidebar} />
         <Routes>
           <Route path="/" element={<Home sidebar={sidebar} />} />
+          <Route path="/lids" element={<Lids  sidebar={sidebar}/>}/>
           <Route path="/managers" element={<Managers sidebar={sidebar}/>}/>
           <Route path="/groups" element={<Groups sidebar={sidebar} />} />
           <Route path="/teachers" element={<Teachers sidebar={sidebar}/>}/>

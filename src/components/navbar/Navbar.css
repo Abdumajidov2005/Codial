@@ -1,3 +1,10 @@
+.navbar{
+  position: sticky;
+  top: 0px;
+  z-index: 99;
+  width: 100%;
+}
+
 .navbar .container {
   padding: 20px 20px;
   border-radius: 10px;
