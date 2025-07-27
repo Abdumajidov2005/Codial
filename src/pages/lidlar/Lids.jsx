@@ -179,7 +179,7 @@ function Lids({ sidebar }) {
                     </Select>
                   </FormControl>
                 </li>
-                <li>salom</li>
+                <li>sadsfsdas</li>
               </ul>
             </div>
             <div
