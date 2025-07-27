@@ -11,6 +11,7 @@
   align-items: center;
   justify-content: right;
   transition: all 0.5s ease;
+  overflow: visible;
 }
 
 .lids-modals.placement {
