@@ -38,15 +38,32 @@ function Lids({ sidebar }) {
 
   const ITEM_HEIGHT = 48;
   const ITEM_PADDING_TOP = 8;
- const MenuProps = {
-  PaperProps: {
-    style: {
-      maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
-      width: 250,
+
+  // Select dropdown uchun to'g'irlangan MenuProps
+  const MenuProps = {
+    PaperProps: {
+      sx: {
+        maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
+        width: 250,
+        left: "0px !important",
+        right: "auto !important",
+      },
     },
-  },
-  disablePortal: true, // Qo‘shildi
-};
+    // Portal ishlatmaslik - dropdown modal ichida qoladi
+    disablePortal: true,
+    // Dropdown joylashuvini aniq belgilash - chap tomonda ochilishi uchun
+    anchorOrigin: {
+      vertical: "bottom",
+      horizontal: "left",
+    },
+    transformOrigin: {
+      vertical: "top",
+      horizontal: "left",
+    },
+    // Dropdown pozitsiyasini to'g'irlash
+    getContentAnchorEl: null,
+  };
+
   const names = [
     "Oliver Hansen",
     "Van Henry",
@@ -68,6 +85,72 @@ function Lids({ sidebar }) {
     };
   }
 
+  // +++++++++++++++++++++++++++++++
+
+  const [names1, setNames1] = useState([
+    "Akbarali Akbarov",
+    "Alisher Alisherov",
+    "Abdulla Abdullayev",
+  ]);
+
+  const [selected, setSelected] = useState("");
+  const [showInput, setShowInput] = useState(false);
+  const [newName, setNewName] = useState("");
+  const [newName2, setNewName2] = useState("");
+
+  const handleSelectChange = (e) => {
+    const value = e.target.value;
+    if (value === "custom") {
+      setShowInput(true);
+    } else {
+      setSelected(value);
+      setShowInput(false);
+    }
+  };
+
+  const handleAddNew = () => {
+    if (newName.trim() !== "" && newName2.trim() !== "") {
+      setNames1([...names1, newName + " " + newName2]);
+      setSelected(newName + " " + newName2);
+      setNewName("");
+      setNewName2("");
+      setShowInput(false);
+    }
+  };
+
+  // ================================
+
+  const [age, setAge] = React.useState("");
+  const [open, setOpen] = React.useState(false);
+
+  const agechange = (event) => {
+    setAge(event.target.value);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  // =========================
+
+  const [jobs, setJobs] = React.useState("");
+  const [open2, setOpen2] = React.useState(false);
+
+  const jobchange = (event) => {
+    setJobs(event.target.value);
+  };
+
+  const handleClose2 = () => {
+    setOpen2(false);
+  };
+
+  const handleOpen2 = () => {
+    setOpen2(true);
+  };
   return (
     <>
       <div className={`lids-modals ${addToLids ? "placement" : ""}`}>
@@ -130,17 +213,109 @@ function Lids({ sidebar }) {
               }`}
             >
               <ul>
-                <li>
-                  <label htmlFor="">Filial</label>
-                  <button>Emirat</button>
-                  <button>Xonaqoh</button>
+                <li className="filial-btns">
+                  <p>Filial</p>
+                  <div className="emirat-btn">
+                    <button>Emirat</button>
+                    <button>Xonaqoh</button>
+                  </div>
                 </li>
-                <li>
-                  <label htmlFor="">Murojaatchi</label>
-                  <input type="text" placeholder="Izlash" />
+                <li className="applicant">
+                  <div className="forma">
+                    <label>Murojaatchi:</label>
+                    <select value={selected} onChange={handleSelectChange}>
+                      <option value="">Tanlang</option>
+                      <option value="custom">➕ Yangi ism qo‘shish</option>
+                      {names1.map((name, index) => (
+                        <option key={index} value={name}>
+                          {name}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
                 </li>
-                <li>
-                  <FormControl sx={{ m: 1, width: 300 }}>
+                <li className="age-master">
+                  <p>Yosh guruhi</p>
+                  <FormControl className="age-masters">
+                    <InputLabel id="demo-controlled-open-select-label">
+                      Age
+                    </InputLabel>
+                    <Select
+                      className="younght"
+                      labelId="demo-controlled-open-select-label"
+                      id="demo-controlled-open-select"
+                      value={age}
+                      open={open}
+                      onClose={handleClose}
+                      onOpen={handleOpen}
+                      label="Age"
+                      onChange={agechange}
+                      MenuProps={{
+                        sx: {
+                          zIndex: 9999,
+                        },
+                      }}
+                    >
+                      <MenuItem value="">
+                        <em>None</em>
+                      </MenuItem>
+                      <MenuItem value={10}>9-12</MenuItem>
+                      <MenuItem value={20}>13-15</MenuItem>
+                      <MenuItem value={40}>16-18</MenuItem>
+                      <MenuItem value={50}>19-21</MenuItem>
+                      <MenuItem value={60}>22-24</MenuItem>
+                      <MenuItem value={70}>25-27</MenuItem>
+                      <MenuItem value={80}>27-30</MenuItem>
+                    </Select>
+                  </FormControl>
+                </li>
+                <li className="age-master job">
+                  <p>Ijtimoiy holati</p>
+                  <FormControl className="age-masters">
+                    <InputLabel
+                      className="controlleer"
+                      id="demo-controlled-open-select-label"
+                    >
+                      Holati
+                    </InputLabel>
+                    <Select
+                      className="younght"
+                      labelId="demo-controlled-open-select-label"
+                      id="demo-controlled-open-select"
+                      value={jobs}
+                      open={open2}
+                      onClose={handleClose2}
+                      onOpen={handleOpen2}
+                      label="Age"
+                      onChange={jobchange}
+                      MenuProps={{
+                        sx: {
+                          zIndex: 9999,
+                        },
+                      }}
+                    >
+                      <MenuItem value="">
+                        <em>None</em>
+                      </MenuItem>
+                      <MenuItem value={10}>Maktab o'quvchisi</MenuItem>
+                      <MenuItem value={20}>Oliygoh talabasi</MenuItem>
+                      <MenuItem value={40}>Kompaniya xodimi</MenuItem>
+                      <MenuItem value={50}>Davlat xizmatchisi</MenuItem>
+                      <MenuItem value={60}>Vaqtincha ishsiz</MenuItem>
+                    </Select>
+                  </FormControl>
+                </li>
+                <li className="things">
+                  <p>Noutbuki bormi</p>
+                  <div className="things-btns">
+                    <button>Bor</button>
+                    <button>Yo'q</button>
+                    <button>Sotib oladi</button>
+                  </div>
+                </li>
+                <li className="test">
+                  <label htmlFor="">salom</label>
+                  <FormControl className="form-control">
                     <InputLabel id="demo-multiple-chip-label">
                       Ismlar
                     </InputLabel>
@@ -158,6 +333,7 @@ function Lids({ sidebar }) {
                       }
                       renderValue={(selected) => (
                         <Box
+                          className="test2"
                           sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}
                         >
                           {selected.map((value) => (
@@ -179,7 +355,6 @@ function Lids({ sidebar }) {
                     </Select>
                   </FormControl>
                 </li>
-                <li>sadsfsdas</li>
               </ul>
             </div>
             <div
@@ -190,6 +365,55 @@ function Lids({ sidebar }) {
               lorem400
             </div>
           </div>
+        </div>
+      </div>
+
+      <div className={`student-about ${showInput ? "watch" : ""}`}>
+        <div className="student-about-informations">
+          <div className="lids-modals-information-down">
+            <p>
+              <span
+                onClick={() => {
+                  setShowInput(false);
+                }}
+                className="lids-modals-mark"
+              >
+                <FaXmark />
+              </span>
+              <span>Lid qo'shish</span>
+            </p>
+            <div className="lids-modals-btns">
+              <button>Bekor qilish</button>
+              <button onClick={handleAddNew}>Saqlash</button>
+            </div>
+          </div>
+          <ul>
+            <li className="filial-btns">
+              <p>Filial</p>
+              <div className="emirat-btn">
+                <button>Emirat</button>
+                <button>Xonaqoh</button>
+              </div>
+            </li>
+            <li>
+              <input
+                type="text"
+                placeholder="Yangi ism kiriting"
+                value={newName}
+                onChange={(e) => setNewName(e.target.value)}
+              />
+
+              {/* <button >Qo‘shish</button> */}
+            </li>
+            <li>
+              <input
+                type="text"
+                placeholder="Yangi ism kiriting"
+                value={newName2}
+                onChange={(e) => setNewName2(e.target.value)}
+              />
+            </li>
+          </ul>
         </div>
       </div>
 

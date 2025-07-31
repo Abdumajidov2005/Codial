@@ -33,6 +33,11 @@
   border-radius: 20px 0px 0px 20px;
 }
 
+.lids-modals.placement .lids-modals-information {
+  right: 0px;
+  transition-delay: 0.4s;
+}
+
 .lids-modals-information-down {
   display: flex;
   align-items: center;
@@ -50,11 +55,6 @@
   font-size: 18px;
   font-weight: 600;
   color: #1e537d;
-}
-
-.lids-modals.placement .lids-modals-information {
-  right: 0px;
-  transition-delay: 0.4s;
 }
 
 .lids-modals-mark {
@@ -117,24 +117,34 @@
   border-radius: 8px;
   font-size: 17px;
   font-weight: 500;
-  background-color: #0092ff;
-  color: #ffffff;
+  background: linear-gradient(
+    to top left,
+    rgba(255, 255, 255, 0.322),
+    rgba(10, 157, 242, 0.212),
+    rgba(255, 255, 255, 0.333)
+  );
+  color: #1e537d;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0px 6px 12px rgba(0, 146, 255, 0.4),
+  transition: all 0.4s ease;
+  box-shadow: 0px 6px 12px rgba(0, 145, 255, 0.289),
     inset 0px 2px 4px rgba(255, 255, 255, 0.1),
     inset 0px -2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .lids-modals-btns button:hover {
-  background-color: #ffc942;
-  color: #000000;
+  background: linear-gradient(
+    to top left,
+    white,
+    rgba(242, 188, 10, 0.327),
+    white
+  );
+  color: #1e537d;
   transform: translateY(-2px);
-  box-shadow: 0px 10px 18px rgba(232, 172, 24, 0.5),
+  box-shadow: 0px 10px 12px rgba(232, 183, 24, 0.252),
     inset 0px 2px 4px rgba(255, 255, 255, 0.1),
     inset 0px -2px 4px rgba(0, 0, 0, 0.3);
 }
@@ -213,6 +223,9 @@
   scrollbar-width: none;
   -ms-overflow-style: none;
   padding-top: 5px;
+  /* Select dropdown uchun container */
+  position: relative;
+  z-index: 1;
 }
 
 .lids-modals-panels::-webkit-scrollbar {
@@ -220,18 +233,19 @@
 }
 
 .lids-modals-panels-content1,
-.lids-modals-panels-content2
-{
-  transition: all .3s ease;
+.lids-modals-panels-content2 {
+  transition: all 0.3s ease;
   transform: scale(1);
-  border: 2px solid red;
   opacity: 1;
   width: 100%;
   height: 99%;
   border-radius: 10px;
-   overflow-y: scroll;
+  overflow-y: scroll;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  /* Select dropdown uchun container */
+  position: relative;
+  z-index: 2;
 }
 
 .lids-modals-panels-content1::-webkit-scrollbar,
@@ -257,18 +271,271 @@
 
 /* contentlar */
 
-.lids-modals-panels-content1{
+.lids-modals-panels-content1 {
   width: 100%;
 }
 
-.lids-modals-panels-content2{
+.lids-modals-panels-content2 {
   width: 100%;
 }
 
 /* contentlar */
 
+.lids-modals-panels-content1 ul {
+  width: 580px;
+  margin: 0 auto;
+  border: 2px solid red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.filial-btns {
+  width: 100%;
+}
+
+.filial-btns p {
+  font-size: 18px;
+  font-weight: 500;
+  color: #1e537d;
+  margin-bottom: 10px;
+}
+
+.filial-btns .emirat-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.emirat-btn button {
+  padding: 16px 100px;
+  border: none;
+  border-radius: 5px;
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  background: linear-gradient(
+    to top left,
+    rgba(255, 255, 255, 0.322),
+    rgba(10, 157, 242, 0.212),
+    rgba(255, 255, 255, 0.333)
+  );
+  color: #1e537d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0px 6px 12px rgba(0, 145, 255, 0.267),
+    inset 0px 2px 4px rgba(255, 255, 255, 0.1),
+    inset 0px -2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.emirat-btn button:hover {
+  background: linear-gradient(
+    to top left,
+    white,
+    rgba(242, 188, 10, 0.327),
+    white
+  );
+  color: #1e537d;
+  transform: translateY(-2px);
+  box-shadow: 0px 10px 18px rgba(232, 173, 24, 0.144),
+    inset 0px 2px 4px rgba(255, 255, 255, 0.1),
+    inset 0px -2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.emirat-btn button:active {
+  transform: scale(0.95);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2),
+    inset 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.applicant {
+  width: 100%;
+}
+.applicant .forma {
+  width: 100%;
+  /* border: 2px solid red; */
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.forma label{
+  font-size: 17px;
+  font-weight: 500;
+  color: #1e537d;
+}
+
+.forma select{
+  width: 100%;
+  padding: 15px 10px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #1e537d;
+  outline: none;
+  border: 1px solid #1e527d52;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+.forma select:hover{
+  border-color: #1e537d;
+}
+
+.forma select:focus{
+  border-color: #1e537d;
+}
+
+.age-master{
+  width: 100%;
+}
+
+.age-master .age-masters{
+  width: 100%;
+}
+
+.age-masters #demo-controlled-open-select-label{
+  color: #1e537d;
+}
+
+.age-master p{
+  margin-bottom: 10px;
+  color: #1e537d;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.age-master select{
+  border: 1px solid #1e527d52;
+}
+
+.age-master select:hover{
+  border: 1px solid #1e537d;
+}
+
+.age-master select:focus{
+  border: 1px solid #1e537d;
+}
+
+.job .controlleer{
+  color: #1e537d;
+  background-color: white;
+  z-index: 9999;
+  width: 50px;
+}
+
+.things{
+  width: 100%;
+}
+
+.things p{
+   margin-bottom: 10px;
+  color: #1e537d;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.things .things-btns{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.things-btns button {
+  padding: 16px 60px;
+  border: none;
+  border-radius: 5px;
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  background: linear-gradient(
+    to top left,
+    rgba(255, 255, 255, 0.322),
+    rgba(10, 157, 242, 0.212),
+    rgba(255, 255, 255, 0.333)
+  );
+  color: #1e537d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0px 6px 12px rgba(0, 145, 255, 0.267),
+    inset 0px 2px 4px rgba(255, 255, 255, 0.1),
+    inset 0px -2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.things-btns button:hover {
+  background: linear-gradient(
+    to top left,
+    white,
+    rgba(242, 188, 10, 0.327),
+    white
+  );
+  color: #1e537d;
+  transform: translateY(-2px);
+  box-shadow: 0px 10px 18px rgba(232, 173, 24, 0.144),
+    inset 0px 2px 4px rgba(255, 255, 255, 0.1),
+    inset 0px -2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.things-btns button:active {
+  transform: scale(0.95);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2),
+    inset 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
 
 /* modal oynani tugashi */
+
+/* 2-modal */
+
+.student-about {
+  background-color: #00000038;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  z-index: 9999;
+  top: -100%;
+  right: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  transition: all 0.4s ease;
+}
+
+.student-about.watch {
+  top: 0%;
+}
+
+.student-about-informations {
+  background-color: white;
+  width: 47%;
+  top: 0px;
+  right: -100%;
+  height: 100vh;
+  border-radius: 20px 0px 0px 20px;
+  position: absolute;
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.student-about.watch .student-about-informations {
+  right: 0%;
+  transition-delay: 0.4s;
+}
+
+/* tugashi */
 
 .lids .container {
   transition: all 0.3s ease;
@@ -321,9 +588,6 @@
   gap: 10px;
 }
 
-.expand button {
-  padding: 10px 20px;
-}
 
 .expand button {
   padding: 10px 20px;
@@ -578,3 +842,98 @@
 .lids-payings .shortcut::-webkit-scrollbar {
   display: none;
 }
+
+/* Material UI Select dropdown uchun maxsus CSS */
+.test {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+}
+
+.test .form-control{
+  width: 100%;
+}
+
+.test2 {
+  position: relative;
+  z-index: 11;
+}
+
+/* Select dropdown menu uchun */
+.MuiPaper-root.MuiMenu-paper {
+  z-index: 9999 !important;
+  max-height: 300px !important;
+  overflow-y: auto !important;
+}
+
+/* Select dropdown container uchun */
+.MuiSelect-root {
+  position: relative;
+  z-index: 10;
+}
+
+/* Modal ichidagi Select uchun maxsus qoidalar */
+.lids-modals .MuiFormControl-root {
+  position: relative;
+  z-index: 10;
+}
+
+.lids-modals .MuiSelect-select {
+  position: relative;
+  z-index: 10;
+}
+
+/* Dropdown menu joylashuvi */
+.lids-modals .MuiMenu-paper {
+  position: absolute !important;
+  z-index: 9999 !important;
+  max-height: 300px !important;
+  overflow-y: auto !important;
+  margin-top: 200px !important;
+  /* Chap tomonda ochilishi uchun */
+  left: 0 !important;
+  right: auto !important;
+  transform-origin: left top !important;
+}
+
+/* Select komponenti uchun maxsus pozitsiya */
+.lids-modals .MuiFormControl-root .MuiMenu-paper {
+  left: 0 !important;
+  top: 100px !important;
+  right: auto !important;
+  margin-left: 8px !important;
+}
+
+/* Select dropdown ni chap tomonda ochilishi uchun qo'shimcha qoidalar */
+.test .MuiMenu-list {
+  padding: 4px 0 !important;
+}
+
+.test .MuiSelect-root + .MuiMenu-paper {
+  left: 0 !important;
+  right: auto !important;
+  transform-origin: left top !important;
+}
+
+/* Material UI Select dropdown pozitsiyasini majburan chap tomonga o'tkazish */
+.MuiPopover-paper {
+  transform-origin: left top !important;
+}
+
+.lids-modals .MuiPopover-paper {
+  left: auto !important;
+  right: auto !important;
+  transform-origin: left top !important;
+  margin-left: 0 !important;
+}
+
+/* Select field uchun maxsus qoidalar */
+.test .MuiFormControl-root {
+  position: relative;
+}
+
+.test .MuiSelect-select {
+  text-align: left !important;
+}
+
+/* tugashi ============================================= */
