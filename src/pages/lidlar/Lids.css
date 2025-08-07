@@ -284,7 +284,6 @@
 .lids-modals-panels-content1 ul {
   width: 580px;
   margin: 0 auto;
-  border: 2px solid red;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -360,20 +359,19 @@
 }
 .applicant .forma {
   width: 100%;
-  /* border: 2px solid red; */
   display: flex;
   align-items: start;
   flex-direction: column;
   gap: 10px;
 }
 
-.forma label{
+.forma label {
   font-size: 17px;
   font-weight: 500;
   color: #1e537d;
 }
 
-.forma select{
+.forma select {
   width: 100%;
   padding: 15px 10px;
   font-size: 18px;
@@ -383,72 +381,79 @@
   border: 1px solid #1e527d52;
   border-radius: 5px;
   cursor: pointer;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
 }
 
-.forma select:hover{
+.forma select:hover {
   border-color: #1e537d;
 }
 
-.forma select:focus{
+.forma select:focus {
   border-color: #1e537d;
 }
 
-.age-master{
+.age-master {
   width: 100%;
 }
 
-.age-master .age-masters{
+.age-master .age-masters {
   width: 100%;
 }
 
-.age-masters #demo-controlled-open-select-label{
+.age-masters #demo-controlled-open-select-label {
   color: #1e537d;
 }
 
-.age-master p{
+.age-master p {
   margin-bottom: 10px;
   color: #1e537d;
   font-size: 17px;
   font-weight: 500;
 }
 
-.age-master select{
+.age-master .younght{
+  color: #1e537d;
+}
+
+.age-master MenuItem{
+  color: #1e537d;
+}
+
+.age-master select {
   border: 1px solid #1e527d52;
 }
 
-.age-master select:hover{
+.age-master select:hover {
   border: 1px solid #1e537d;
 }
 
-.age-master select:focus{
+.age-master select:focus {
   border: 1px solid #1e537d;
 }
 
-.job .controlleer{
+.job .controlleer {
   color: #1e537d;
   background-color: white;
   z-index: 9999;
   width: 50px;
 }
 
-.things{
+.things {
   width: 100%;
 }
 
-.things p{
-   margin-bottom: 10px;
+.things p {
+  margin-bottom: 10px;
   color: #1e537d;
   font-size: 17px;
   font-weight: 500;
 }
 
-.things .things-btns{
+.things .things-btns {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-
 
 .things-btns button {
   padding: 16px 60px;
@@ -495,6 +500,24 @@
     inset 0px 2px 2px rgba(0, 0, 0, 0.3);
 }
 
+.taglar{
+  width: 100%;
+}
+
+.taglar .taglar-controli{
+  width: 100%;
+}
+
+.taglar-controli .warm{
+  z-index: 9999;
+}
+
+.taglar-controli .warms{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 
 /* modal oynani tugashi */
 
@@ -587,7 +610,6 @@
   align-items: center;
   gap: 10px;
 }
-
 
 .expand button {
   padding: 10px 20px;
@@ -842,15 +864,16 @@
 .lids-payings .shortcut::-webkit-scrollbar {
   display: none;
 }
+x`
 
 /* Material UI Select dropdown uchun maxsus CSS */
-.test {
+/* .test {
   position: relative;
   z-index: 10;
   width: 100%;
 }
 
-.test .form-control{
+.test .form-control {
   width: 100%;
 }
 
@@ -859,20 +882,17 @@
   z-index: 11;
 }
 
-/* Select dropdown menu uchun */
 .MuiPaper-root.MuiMenu-paper {
   z-index: 9999 !important;
-  max-height: 300px !important;
+  max-height: 200px !important;
   overflow-y: auto !important;
 }
 
-/* Select dropdown container uchun */
 .MuiSelect-root {
   position: relative;
   z-index: 10;
 }
 
-/* Modal ichidagi Select uchun maxsus qoidalar */
 .lids-modals .MuiFormControl-root {
   position: relative;
   z-index: 10;
@@ -883,28 +903,24 @@
   z-index: 10;
 }
 
-/* Dropdown menu joylashuvi */
 .lids-modals .MuiMenu-paper {
   position: absolute !important;
   z-index: 9999 !important;
-  max-height: 300px !important;
+  max-height: 400px !important;
   overflow-y: auto !important;
   margin-top: 200px !important;
-  /* Chap tomonda ochilishi uchun */
   left: 0 !important;
   right: auto !important;
   transform-origin: left top !important;
 }
 
-/* Select komponenti uchun maxsus pozitsiya */
 .lids-modals .MuiFormControl-root .MuiMenu-paper {
   left: 0 !important;
   top: 100px !important;
   right: auto !important;
-  margin-left: 8px !important;
+  margin-left: 110px !important;
 }
 
-/* Select dropdown ni chap tomonda ochilishi uchun qo'shimcha qoidalar */
 .test .MuiMenu-list {
   padding: 4px 0 !important;
 }
@@ -915,7 +931,6 @@
   transform-origin: left top !important;
 }
 
-/* Material UI Select dropdown pozitsiyasini majburan chap tomonga o'tkazish */
 .MuiPopover-paper {
   transform-origin: left top !important;
 }
@@ -927,13 +942,12 @@
   margin-left: 0 !important;
 }
 
-/* Select field uchun maxsus qoidalar */
 .test .MuiFormControl-root {
   position: relative;
 }
 
 .test .MuiSelect-select {
   text-align: left !important;
-}
+} */
 
 /* tugashi ============================================= */

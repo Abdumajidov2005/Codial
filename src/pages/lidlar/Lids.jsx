@@ -4,14 +4,15 @@ import { CgArrowsExpandRight } from "react-icons/cg";
 import { HiXMark } from "react-icons/hi2";
 import { FaChevronDown, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { FaXmark } from "react-icons/fa6";
-import { useTheme } from "@mui/material/styles";
-import Box from "@mui/material/Box";
+// import { useTheme } from "@mui/material/styles";
+// import Box from "@mui/material/Box";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
-import Chip from "@mui/material/Chip";
+import { Box, Checkbox, Chip, ListItemText } from "@mui/material";
+// import Chip from "@mui/material/Chip";
 
 function Lids({ sidebar }) {
   const [zoomPlus, setZoomPlus] = useState(false);
@@ -23,45 +24,87 @@ function Lids({ sidebar }) {
 
   const [nextPage, setNextPage] = useState(false);
 
-  const theme = useTheme();
-  const [personName, setPersonName] = React.useState([]);
+  // const theme = useTheme();
+  // const [personName, setPersonName] = React.useState([]);
 
-  const handleChange = (event) => {
-    const {
-      target: { value },
-    } = event;
-    setPersonName(
-      // On autofill we get a stringified value.
-      typeof value === "string" ? value.split(",") : value
-    );
-  };
+  // const handleChange = (event) => {
+  //   const {
+  //     target: { value },
+  //   } = event;
+  //   setPersonName(
+  //     // On autofill we get a stringified value.
+  //     typeof value === "string" ? value.split(",") : value
+  //   );
+  // };
 
-  const ITEM_HEIGHT = 48;
+  // const ITEM_HEIGHT = 48;
+  // const ITEM_PADDING_TOP = 8;
+
+  // const MenuProps = {
+  //   PaperProps: {
+  //     sx: {
+  //       maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
+  //       width: 250,
+  //       left: "0px !important",
+  //       right: "auto !important",
+  //     },
+  //   },
+  //   disablePortal: true,
+  //   anchorOrigin: {
+  //     vertical: "bottom",
+  //     horizontal: "left",
+  //   },
+  //   transformOrigin: {
+  //     vertical: "top",
+  //     horizontal: "left",
+  //   },
+  //   getContentAnchorEl: null,
+  // };
+
+  // const names = [
+  //   "Oliver Hansen",
+  //   "Van Henry",
+  //   "April Tucker",
+  //   "Ralph Hubbard",
+  //   "Omar Alexander",
+  //   "Carlos Abbott",
+  //   "Miriam Wagner",
+  //   "Bradley Wilkerson",
+  //   "Virginia Andrews",
+  //   "Kelly Snyder",
+  // ];
+
+  // function getStyles(name, personName, theme) {
+  //   return {
+  //     fontWeight: personName.includes(name)
+  //       ? theme.typography.fontWeightMedium
+  //       : theme.typography.fontWeightRegular,
+  //   };
+  // }
+
+  const ITEM_HEIGHT = 83;
   const ITEM_PADDING_TOP = 8;
 
-  // Select dropdown uchun to'g'irlangan MenuProps
   const MenuProps = {
     PaperProps: {
       sx: {
         maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
-        width: 250,
-        left: "0px !important",
+        width: 570,
+        left: "120px !important",
         right: "auto !important",
+        top: "140px !important",
       },
     },
-    // Portal ishlatmaslik - dropdown modal ichida qoladi
     disablePortal: true,
-    // Dropdown joylashuvini aniq belgilash - chap tomonda ochilishi uchun
-    anchorOrigin: {
-      vertical: "bottom",
-      horizontal: "left",
-    },
-    transformOrigin: {
-      vertical: "top",
-      horizontal: "left",
-    },
-    // Dropdown pozitsiyasini to'g'irlash
-    getContentAnchorEl: null,
+    // anchorOrigin: {
+    //   vertical: "bottom",
+    //   horizontal: "left",
+    // },
+    // transformOrigin: {
+    //   vertical: "top",
+    //   horizontal: "left",
+    // },
+    // getContentAnchorEl: null,
   };
 
   const names = [
@@ -77,13 +120,17 @@ function Lids({ sidebar }) {
     "Kelly Snyder",
   ];
 
-  function getStyles(name, personName, theme) {
-    return {
-      fontWeight: personName.includes(name)
-        ? theme.typography.fontWeightMedium
-        : theme.typography.fontWeightRegular,
-    };
-  }
+  const [personName, setPersonName] = React.useState([]);
+
+  const handleChange = (event) => {
+    const {
+      target: { value },
+    } = event;
+    setPersonName(
+      // On autofill we get a stringified value.
+      typeof value === "string" ? value.split(",") : value
+    );
+  };
 
   // +++++++++++++++++++++++++++++++
 
@@ -256,16 +303,30 @@ function Lids({ sidebar }) {
                         },
                       }}
                     >
-                      <MenuItem value="">
+                      <MenuItem sx={{ color: "gray" }} value="">
                         <em>None</em>
                       </MenuItem>
-                      <MenuItem value={10}>9-12</MenuItem>
-                      <MenuItem value={20}>13-15</MenuItem>
-                      <MenuItem value={40}>16-18</MenuItem>
-                      <MenuItem value={50}>19-21</MenuItem>
-                      <MenuItem value={60}>22-24</MenuItem>
-                      <MenuItem value={70}>25-27</MenuItem>
-                      <MenuItem value={80}>27-30</MenuItem>
+                      <MenuItem sx={{ color: "#1e537d" }} value={10}>
+                        9-12
+                      </MenuItem>
+                      <MenuItem sx={{ color: "#1e537d" }} value={20}>
+                        13-15
+                      </MenuItem>
+                      <MenuItem sx={{ color: "#1e537d" }} value={40}>
+                        16-18
+                      </MenuItem>
+                      <MenuItem sx={{ color: "#1e537d" }} value={50}>
+                        19-21
+                      </MenuItem>
+                      <MenuItem sx={{ color: "#1e537d" }} value={60}>
+                        22-24
+                      </MenuItem>
+                      <MenuItem sx={{ color: "#1e537d" }} value={70}>
+                        25-27
+                      </MenuItem>
+                      <MenuItem sx={{ color: "#1e537d" }} value={80}>
+                        27-30
+                      </MenuItem>
                     </Select>
                   </FormControl>
                 </li>
@@ -294,14 +355,24 @@ function Lids({ sidebar }) {
                         },
                       }}
                     >
-                      <MenuItem value="">
+                      <MenuItem sx={{ color: "gray" }} value="">
                         <em>None</em>
                       </MenuItem>
-                      <MenuItem value={10}>Maktab o'quvchisi</MenuItem>
-                      <MenuItem value={20}>Oliygoh talabasi</MenuItem>
-                      <MenuItem value={40}>Kompaniya xodimi</MenuItem>
-                      <MenuItem value={50}>Davlat xizmatchisi</MenuItem>
-                      <MenuItem value={60}>Vaqtincha ishsiz</MenuItem>
+                      <MenuItem sx={{ color: "#1e537d" }} value={10}>
+                        Maktab o'quvchisi
+                      </MenuItem>
+                      <MenuItem sx={{ color: "#1e537d" }} value={20}>
+                        Oliygoh talabasi
+                      </MenuItem>
+                      <MenuItem sx={{ color: "#1e537d" }} value={40}>
+                        Kompaniya xodimi
+                      </MenuItem>
+                      <MenuItem sx={{ color: "#1e537d" }} value={50}>
+                        Davlat xizmatchisi
+                      </MenuItem>
+                      <MenuItem sx={{ color: "#1e537d" }} value={60}>
+                        Vaqtincha ishsiz
+                      </MenuItem>
                     </Select>
                   </FormControl>
                 </li>
@@ -313,8 +384,67 @@ function Lids({ sidebar }) {
                     <button>Sotib oladi</button>
                   </div>
                 </li>
-                <li className="test">
-                  <label htmlFor="">salom</label>
+
+                <li className="taglar">
+                  <div>
+                    <FormControl className="taglar-controli">
+                      <InputLabel id="demo-multiple-checkbox-label">
+                        Tag
+                      </InputLabel>
+                      <Select
+                        sx={{ color: "#1e537d" }}
+                        className="warm"
+                        labelId="demo-multiple-checkbox-label"
+                        id="demo-multiple-checkbox"
+                        multiple
+                        value={personName}
+                        onChange={handleChange}
+                        input={<OutlinedInput label="Tag" />}
+                        renderValue={(selected) => (
+                          <Box
+                            sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}
+                          >
+                            {selected.map((value) => (
+                              <Chip
+                                key={value}
+                                label={value}
+                                sx={{
+                                  background: `linear-gradient(
+      to top left,
+      rgba(255, 255, 255, 0.322),
+      rgba(10, 157, 242, 0.212),
+      rgba(255, 255, 255, 0.333)
+    )`,
+                                  boxShadow: `
+      0px 6px 12px rgba(0, 145, 255, 0.267),
+      inset 0px 2px 4px rgba(255, 255, 255, 0.1),
+      inset 0px -2px 4px rgba(0, 0, 0, 0.3)
+    `,
+                                  color: "#1e537d",
+                                }}
+                              />
+                            ))}
+                          </Box>
+                        )}
+                        MenuProps={MenuProps}
+                      >
+                        {names.map((name) => (
+                          <MenuItem
+                            sx={{ color: "#1e537d" }}
+                            className="warms"
+                            key={name}
+                            value={name}
+                          >
+                            <Checkbox checked={personName.includes(name)} />
+                            <ListItemText primary={name} />
+                          </MenuItem>
+                        ))}
+                      </Select>
+                    </FormControl>
+                  </div>
+                </li>
+                {/* <li className="test">
+                  <label htmlFor="">Teglar</label>
                   <FormControl className="form-control">
                     <InputLabel id="demo-multiple-chip-label">
                       Ismlar
@@ -348,13 +478,16 @@ function Lids({ sidebar }) {
                           key={name}
                           value={name}
                           style={getStyles(name, personName, theme)}
+                          onClick={()=>{
+
+                          }}
                         >
                           {name}
                         </MenuItem>
                       ))}
                     </Select>
                   </FormControl>
-                </li>
+                </li> */}
               </ul>
             </div>
             <div
