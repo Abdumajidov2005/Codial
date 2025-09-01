@@ -45,47 +45,24 @@
   padding: 10px 0px;
 }
 
-.lids-modals-information-down p {
+.lids-modals-information-down .lids-qoshish {
   display: flex;
   align-items: center;
   gap: 20px;
 }
 
-.lids-modals-information-down p span:nth-child(2) {
+.lids-modals-information-down .lids-qoshish p {
   font-size: 18px;
   font-weight: 600;
   color: #1e537d;
 }
 
 .lids-modals-mark {
-  background-color: #f1f4f8;
-  box-shadow: 0px 8px 15px rgba(235, 236, 237, 0.4),
-    /* tashqi ko‘k nurlar */ inset 0px 2px 4px rgba(255, 255, 255, 0.1),
-    /* ustki ichki yoritish */ inset 0px -2px 4px rgba(0, 0, 0, 0.3);
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  color: #1e537d;
-  font-size: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  transform: translateY(0);
+  padding: 8px 8px;
+  border-radius: 100px;
 }
 
-.lids-modals-mark:hover {
-  transform: translateY(-2px) scale(1.05);
-  box-shadow: 0px 6px 10px rgba(232, 172, 24, 0.5),
-    /* to‘q sariq nurlar */ inset 0px 2px 4px rgba(255, 255, 255, 0.1),
-    inset 0px -2px 4px rgba(0, 0, 0, 0.3);
-  background-color: #ffc942; /* aksent sariq */
-}
 
-.lids-modals-mark:active {
-  transform: scale(1);
-}
 
 .lids-modals-btns {
   display: flex;
@@ -113,47 +90,8 @@
 
 .lids-modals-btns button {
   padding: 10px 20px;
-  border: none;
-  border-radius: 8px;
-  font-size: 17px;
-  font-weight: 500;
-  background: linear-gradient(
-    to top left,
-    rgba(255, 255, 255, 0.322),
-    rgba(10, 157, 242, 0.212),
-    rgba(255, 255, 255, 0.333)
-  );
-  color: #1e537d;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  cursor: pointer;
-  transition: all 0.4s ease;
-  box-shadow: 0px 6px 12px rgba(0, 145, 255, 0.289),
-    inset 0px 2px 4px rgba(255, 255, 255, 0.1),
-    inset 0px -2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.lids-modals-btns button:hover {
-  background: linear-gradient(
-    to top left,
-    white,
-    rgba(242, 188, 10, 0.327),
-    white
-  );
-  color: #1e537d;
-  transform: translateY(-2px);
-  box-shadow: 0px 10px 12px rgba(232, 183, 24, 0.252),
-    inset 0px 2px 4px rgba(255, 255, 255, 0.1),
-    inset 0px -2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.lids-modals-btns button:active {
-  transform: scale(0.95);
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2),
-    inset 0px 2px 2px rgba(0, 0, 0, 0.3);
-}
 
 .lids-modals-helper {
   border-bottom: 1px solid rgba(128, 128, 128, 0.332);
@@ -172,7 +110,6 @@
   color: #1e537d;
   cursor: pointer;
   position: relative;
-  /* background-color: red; */
   transition: all 0.3s ease;
 }
 
@@ -217,15 +154,19 @@
 .lids-modals-panels {
   width: 100%;
   height: 80%;
+  display: flex;
   border-radius: 10px;
   margin-top: 10px;
   overflow-y: scroll;
   scrollbar-width: none;
   -ms-overflow-style: none;
-  padding-top: 5px;
+  padding-top: 15px;
   /* Select dropdown uchun container */
   position: relative;
   z-index: 1;
+  background-color: #ffffff;
+  box-shadow: inset 2px 2px 10px rgba(0, 0, 0, 0.1),
+    inset -2px -2px 5px rgba(255, 255, 255, 0.7);
 }
 
 .lids-modals-panels::-webkit-scrollbar {
@@ -234,8 +175,6 @@
 
 .lids-modals-panels-content1,
 .lids-modals-panels-content2 {
-  transition: all 0.3s ease;
-  transform: scale(1);
   opacity: 1;
   width: 100%;
   height: 99%;
@@ -246,6 +185,9 @@
   /* Select dropdown uchun container */
   position: relative;
   z-index: 2;
+  transform: translate(0);
+  transition: all .5s ease;
+
 }
 
 .lids-modals-panels-content1::-webkit-scrollbar,
@@ -254,15 +196,16 @@
 }
 
 .lids-modals-panels-content1.take-up {
-  transform: scale(0);
+  transform: translate(-100%);
   pointer-events: none;
   opacity: 0;
   width: 0px;
   height: 0px;
+  transition: all .5s ease;
 }
 
 .lids-modals-panels-content2.take-down {
-  transform: scale(0);
+  transform: translate(100%);
   pointer-events: none;
   opacity: 0;
   width: 0px;
@@ -281,8 +224,9 @@
 
 /* contentlar */
 
-.lids-modals-panels-content1 ul {
-  width: 580px;
+.lids-modals-panels-content1 .content1-registr {
+  width: 720px;
+  border-radius: 20px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -306,53 +250,14 @@
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 20px;
 }
 
 .emirat-btn button {
-  padding: 16px 100px;
-  border: none;
-  border-radius: 5px;
-  font-size: 17px;
-  font-weight: 500;
-  letter-spacing: 2px;
-  background: linear-gradient(
-    to top left,
-    rgba(255, 255, 255, 0.322),
-    rgba(10, 157, 242, 0.212),
-    rgba(255, 255, 255, 0.333)
-  );
-  color: #1e537d;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0px 6px 12px rgba(0, 145, 255, 0.267),
-    inset 0px 2px 4px rgba(255, 255, 255, 0.1),
-    inset 0px -2px 4px rgba(0, 0, 0, 0.3);
+  padding: 16px 110px;
 }
 
-.emirat-btn button:hover {
-  background: linear-gradient(
-    to top left,
-    white,
-    rgba(242, 188, 10, 0.327),
-    white
-  );
-  color: #1e537d;
-  transform: translateY(-2px);
-  box-shadow: 0px 10px 18px rgba(232, 173, 24, 0.144),
-    inset 0px 2px 4px rgba(255, 255, 255, 0.1),
-    inset 0px -2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.emirat-btn button:active {
-  transform: scale(0.95);
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2),
-    inset 0px 2px 2px rgba(0, 0, 0, 0.3);
-}
 
 .applicant {
   width: 100%;
@@ -374,14 +279,17 @@
 .forma select {
   width: 100%;
   padding: 15px 10px;
-  font-size: 18px;
-  font-weight: 500;
+  font-size: 17px;
+  font-weight: 400;
   color: #1e537d;
   outline: none;
-  border: 1px solid #1e527d52;
+  border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: all 0.3s ease;
+  background-color: #ffffff;
+  box-shadow: inset 2px 2px 10px rgba(0, 0, 0, 0.1),
+    inset -2px -2px 5px rgba(255, 255, 255, 0.7);
 }
 
 .forma select:hover {
@@ -411,30 +319,30 @@
   font-weight: 500;
 }
 
-.age-master .younght{
+.age-master .younght {
   color: #1e537d;
+  background-color: #ffffff;
+  box-shadow: inset 2px 2px 10px rgba(0, 0, 0, 0.1),
+    inset -2px -2px 5px rgba(255, 255, 255, 0.7);
+  border: 1px solid white;
 }
 
-.age-master MenuItem{
+.age-master MenuItem {
   color: #1e537d;
-}
-
-.age-master select {
-  border: 1px solid #1e527d52;
 }
 
 .age-master select:hover {
-  border: 1px solid #1e537d;
+  border: 1px solid white;
 }
 
 .age-master select:focus {
-  border: 1px solid #1e537d;
+  border-color: white;
 }
 
 .job .controlleer {
   color: #1e537d;
   background-color: white;
-  z-index: 9999;
+  z-index: 9;
   width: 50px;
 }
 
@@ -456,68 +364,280 @@
 }
 
 .things-btns button {
-  padding: 16px 60px;
-  border: none;
-  border-radius: 5px;
-  font-size: 17px;
+  padding: 16px 80px;
+}
+
+.taglar {
+  width: 100%;
+}
+
+.taglar p {
+  font-size: 16px;
   font-weight: 500;
-  letter-spacing: 2px;
-  background: linear-gradient(
-    to top left,
-    rgba(255, 255, 255, 0.322),
-    rgba(10, 157, 242, 0.212),
-    rgba(255, 255, 255, 0.333)
-  );
   color: #1e537d;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0px 6px 12px rgba(0, 145, 255, 0.267),
-    inset 0px 2px 4px rgba(255, 255, 255, 0.1),
-    inset 0px -2px 4px rgba(0, 0, 0, 0.3);
+  margin-bottom: 10px;
 }
 
-.things-btns button:hover {
-  background: linear-gradient(
-    to top left,
-    white,
-    rgba(242, 188, 10, 0.327),
-    white
-  );
-  color: #1e537d;
-  transform: translateY(-2px);
-  box-shadow: 0px 10px 18px rgba(232, 173, 24, 0.144),
-    inset 0px 2px 4px rgba(255, 255, 255, 0.1),
-    inset 0px -2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.things-btns button:active {
-  transform: scale(0.95);
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2),
-    inset 0px 2px 2px rgba(0, 0, 0, 0.3);
-}
-
-.taglar{
+.taglar .taglar-controli {
   width: 100%;
+  position: relative;
 }
 
-.taglar .taglar-controli{
-  width: 100%;
-}
-
-.taglar-controli .warm{
+.taglar-controli .warm {
   z-index: 9999;
 }
 
-.taglar-controli .warms{
+.taglar-controli .warms {
   width: 100%;
   display: flex;
   align-items: center;
   gap: 10px;
 }
+
+/* content1 ni tugashi */
+
+/* content2  */
+
+.lids-modals-panels-content2 .content2-registr2 {
+  width: 720px;
+  border-radius: 20px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.content2-registr2 li{
+  width: 100%;
+}
+
+.content2-registr2 .label-brand{
+  font-size: 18px;
+  color: #1e537d;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.weeks{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.weeks button{
+  padding: 18px 105px;
+}
+
+/* selecteffect */
+
+
+.select-box {
+  position: relative;
+  width: 720px;
+  font-family: sans-serif;
+  user-select: none;
+}
+
+.selected {
+  padding: 16px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #1e537d;
+  background-color: #ffffff;
+  box-shadow: inset 2px 2px 10px rgba(0, 0, 0, 0.1),
+    inset -2px -2px 5px rgba(255, 255, 255, 0.7);
+}
+
+.selected:hover {
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.05),
+    inset -1px -1px 2px rgba(255, 255, 255, 0.6),
+    0 4px 10px rgba(4, 139, 249, 0.2);
+}
+
+.selected:active {
+  box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.2),
+    inset -2px -2px 4px rgba(255, 255, 255, 0.5);
+  transform: scale(0.98);
+}
+
+/* Arrow */
+.arrow {
+  border: 4px solid #1e537d;
+  border-width: 0 3px 3px 0;
+  padding: 4px;
+  transform: rotate(45deg);
+  transition: transform 0.2s;
+}
+.arrow.up {
+  transform: rotate(-135deg);
+}
+
+/* Options box */
+.options {
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+  background: white;
+  color: #1e537d;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-height: 0;
+  opacity: 0;
+  overflow-y: scroll;
+  transition: all 0.3s ease;
+  z-index: 100;
+}
+.options.show {
+  max-height: 260px;
+  opacity: 1;
+  padding-bottom: 6px;
+}
+
+.options.sourcing{
+  bottom: 60px;
+}
+
+/* Search input */
+.search-input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  outline: none;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+.search-input:focus {
+  background: #fafafa;
+}
+
+/* Option */
+.option {
+  padding: 12px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.option:hover {
+  background: #f0f0f0;
+}
+
+/* No option text */
+.no-option {
+  padding: 12px;
+  font-size: 14px;
+  color: #888;
+  text-align: center;
+}
+
+/* .multiselect================================================================================================ */
+
+.multiselect3 {
+  position: relative;
+  width: 280px;
+  font-family: sans-serif;
+  width: 720px;
+}
+
+.selected-box3 {
+  padding: 18px 20px;
+  border-radius: 6px;
+  background: white;
+  color: #1e537d;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  box-shadow: inset 2px 2px 10px rgba(0, 0, 0, 0.1),
+    inset -2px -2px 5px rgba(255, 255, 255, 0.7);
+}
+
+
+.selected-box3:hover {
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.05),
+    inset -1px -1px 2px rgba(255, 255, 255, 0.6),
+    0 4px 10px rgba(4, 139, 249, 0.2);
+}
+
+.selected-box3:active {
+  box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.2),
+    inset -2px -2px 4px rgba(255, 255, 255, 0.5);
+  transform: scale(0.98);
+}
+
+.arrow3 {
+  border: solid #1e537d;
+  border-width: 0 2px 2px 0;
+  padding: 4px;
+  transform: rotate(45deg);
+  transition: transform 0.2s;
+}
+.arrow3.up {
+  transform: rotate(-135deg);
+}
+
+.dropdown3 {
+  position: absolute;
+  bottom: auto;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  max-height: 0px;
+  overflow-y: scroll;
+  opacity: 0;
+  color: #1e537d;
+}
+
+
+.dropdown3.show3 {
+  max-height: 200px;
+  opacity: 1;
+  padding-bottom: 6px;
+  bottom: auto;
+}
+
+.option3 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.option3:hover {
+  background: #f7f7f7;
+}
+
+.select-all3 {
+  font-weight: bold;
+  color: #d32f2f;
+  border-bottom: 1px solid #eee;
+}
+
+.search-input3 {
+  width: 100%;
+  padding: 8px 10px;
+  border: none;
+  border-top: 1px solid #eee;
+  outline: none;
+  font-size: 14px;
+}
+
+
 
 /* modal oynani tugashi */
 
@@ -558,6 +678,84 @@
   transition-delay: 0.4s;
 }
 
+.edit-information {
+  background-color: #ffffff;
+  box-shadow: inset 2px 2px 10px rgba(0, 0, 0, 0.1),
+    inset -2px -2px 5px rgba(255, 255, 255, 0.7);
+  border-radius: 20px;
+  padding: 10px;
+  margin: 20px auto;
+  width: 650px;
+  height: 83vh;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.edit-information::-webkit-scrollbar {
+  display: none;
+}
+
+.male button {
+  padding: 18px 110px;
+}
+
+.edit-information li {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 5px;
+}
+
+.edit-information li label {
+  font-size: 18px;
+  font-weight: 500;
+  color: #1e537d;
+  margin-bottom: 10px;
+}
+
+.edit-information li input {
+  width: 100%;
+  outline: none;
+  padding: 18px 10px;
+  border-radius: 10px;
+  /* border: 1px solid #1e537d; */
+  border: none;
+  color: #1e537d;
+  font-size: 16px;
+  font-weight: 500;
+  background-color: #ffffff;
+  box-shadow: inset 2px 2px 10px rgba(0, 0, 0, 0.1),
+    inset -2px -2px 5px rgba(255, 255, 255, 0.7);
+}
+
+.edit-information li input::placeholder {
+  letter-spacing: 1px;
+  color: #1e527d9c;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/* tugashi */
+
+/* cancelModal */
+
+.lids-plus {
+  position: fixed;
+  top: -100%;
+  right: 0px;
+  z-index: 999;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(85, 84, 84, 0.299);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lids-plus.finished {
+  top: 0px;
+}
+
 /* tugashi */
 
 .lids .container {
@@ -566,7 +764,7 @@
 
 .lids .variable {
   /* border: 2px solid red; */
-  height: 615px;
+  height: 610px;
   display: flex;
   align-items: start;
   flex-wrap: wrap;
@@ -613,66 +811,12 @@
 
 .expand button {
   padding: 10px 20px;
-  border: none;
-  border-radius: 8px;
-  font-size: 17px;
-  font-weight: 500;
-  background-color: #0092ff;
-  color: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0px 6px 12px rgba(0, 146, 255, 0.4),
-    inset 0px 2px 4px rgba(255, 255, 255, 0.1),
-    inset 0px -2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.expand button:hover {
-  background-color: #ffc942;
-  color: #000000;
-  transform: translateY(-2px);
-  box-shadow: 0px 10px 18px rgba(232, 172, 24, 0.5),
-    inset 0px 2px 4px rgba(255, 255, 255, 0.1),
-    inset 0px -2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.expand button:active {
-  transform: scale(0.95);
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2),
-    inset 0px 2px 2px rgba(0, 0, 0, 0.3);
-}
 
 .zoom {
-  background-color: #f1f4f8;
-  box-shadow: 0px 8px 15px rgba(235, 236, 237, 0.4),
-    /* tashqi ko‘k nurlar */ inset 0px 2px 4px rgba(255, 255, 255, 0.1),
-    /* ustki ichki yoritish */ inset 0px -2px 4px rgba(0, 0, 0, 0.3);
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  color: #1e537d;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
-  cursor: pointer;
-  transform: translateY(0px);
-  transition: all 0.3s ease;
-}
-
-.zoom:hover {
-  transform: translateY(-2px) scale(1.05);
-  box-shadow: 0px 6px 10px rgba(232, 172, 24, 0.5),
-    /* to‘q sariq nurlar */ inset 0px 2px 4px rgba(255, 255, 255, 0.1),
-    inset 0px -2px 4px rgba(0, 0, 0, 0.3);
-  background-color: #ffc942; /* aksent sariq */
-}
-
-.zoom:active {
-  transform: scale(1);
+  padding: 10px 10px !important;
+  border-radius: 200px;
 }
 
 .zoom svg {
@@ -864,90 +1008,90 @@
 .lids-payings .shortcut::-webkit-scrollbar {
   display: none;
 }
-x`
 
 /* Material UI Select dropdown uchun maxsus CSS */
-/* .test {
+
+.taglar {
   position: relative;
   z-index: 10;
   width: 100%;
 }
 
-.test .form-control {
+/* .test .form-control {
   width: 100%;
-}
+} */
 
-.test2 {
+/* .test2 {
   position: relative;
   z-index: 11;
-}
+} */
 
-.MuiPaper-root.MuiMenu-paper {
-  z-index: 9999 !important;
-  max-height: 200px !important;
+.taglar .MuiPaper-root.MuiMenu-paper {
+  z-index: 99999 !important;
+  max-height: 350px !important;
   overflow-y: auto !important;
 }
 
-.MuiSelect-root {
+.taglar .MuiSelect-root {
   position: relative;
   z-index: 10;
 }
 
-.lids-modals .MuiFormControl-root {
+.taglar .MuiFormControl-root {
   position: relative;
   z-index: 10;
 }
 
-.lids-modals .MuiSelect-select {
+.taglar .MuiSelect-select {
   position: relative;
   z-index: 10;
 }
 
-.lids-modals .MuiMenu-paper {
+.taglar .MuiMenu-paper {
   position: absolute !important;
   z-index: 9999 !important;
   max-height: 400px !important;
   overflow-y: auto !important;
-  margin-top: 200px !important;
+  margin-top: 100px !important;
   left: 0 !important;
   right: auto !important;
   transform-origin: left top !important;
 }
 
-.lids-modals .MuiFormControl-root .MuiMenu-paper {
+.taglar .MuiFormControl-root .MuiMenu-paper {
   left: 0 !important;
   top: 100px !important;
   right: auto !important;
-  margin-left: 110px !important;
+  margin-left: 40px !important;
 }
 
-.test .MuiMenu-list {
+.taglar .MuiMenu-list {
   padding: 4px 0 !important;
 }
 
-.test .MuiSelect-root + .MuiMenu-paper {
+.taglar .MuiSelect-root + .MuiMenu-paper {
   left: 0 !important;
   right: auto !important;
   transform-origin: left top !important;
 }
 
-.MuiPopover-paper {
+.taglar .MuiPopover-paper {
   transform-origin: left top !important;
 }
 
-.lids-modals .MuiPopover-paper {
+.taglar .MuiPopover-paper {
   left: auto !important;
   right: auto !important;
   transform-origin: left top !important;
   margin-left: 0 !important;
 }
 
-.test .MuiFormControl-root {
+.taglar .MuiFormControl-root {
   position: relative;
 }
 
-.test .MuiSelect-select {
+.taglar .MuiSelect-select {
   text-align: left !important;
-} */
+}
 
 /* tugashi ============================================= */

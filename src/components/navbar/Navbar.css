@@ -1,4 +1,4 @@
-.navbar{
+.navbar {
   position: sticky;
   top: 0px;
   z-index: 99;
@@ -24,8 +24,7 @@
   align-items: center;
   border-radius: 5px;
   background-color: #ffffff;
-  box-shadow:
-    inset 3px 3px 10px rgba(0, 0, 0, 0.1),
+  box-shadow: inset 3px 3px 10px rgba(0, 0, 0, 0.1),
     inset -2px -2px 5px rgba(255, 255, 255, 0.7);
 }
 
@@ -81,81 +80,73 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 300px;
+  width: 310px;
 }
-
 
 .bell {
   width: 45px;
   height: 45px;
   border-radius: 8px;
-  background-color: #0092FF;
-  color: #FFFFFF;
+  background-color: #f1f4f8;
+  color: #1e537d;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 
-    0px 6px 12px rgba(0, 146, 255, 0.4),
+  box-shadow: 0px 6px 10px rgb(237, 240, 244),
     inset 0px 2px 4px rgba(255, 255, 255, 0.1),
     inset 0px -2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .bell:hover {
-  background-color: #FFC942;
-  color: #000000;
+  background-color: rgba(241, 244, 248, 0.296);
+  color: #1e537d;
   transform: translateY(-2px);
-  box-shadow: 
-    0px 10px 18px rgba(232, 172, 24, 0.5),
+  box-shadow: 0px 6px 10px rgb(239, 244, 251),
     inset 0px 2px 4px rgba(255, 255, 255, 0.1),
     inset 0px -2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .bell:active {
+  background-color: rgb(241, 244, 248, 1);
   transform: scale(0.95);
-  box-shadow: 
-    0px 4px 8px rgba(0, 0, 0, 0.2),
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2),
     inset 0px 2px 2px rgba(0, 0, 0, 0.3);
 }
-
 
 .user-admin {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 240px;
-  padding: 3px 10px;
+  width: 250px;
+  padding: 7px 10px;
   border-radius: 10px;
   background-color: #ffffff;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow:
-    inset 3px 3px 10px rgba(0, 0, 0, 0.1),
+  box-shadow: inset 3px 3px 10px rgba(0, 0, 0, 0.1),
     inset -2px -2px 5px rgba(255, 255, 255, 0.7);
+  scroll-behavior: smooth;
+
 }
 
-/*  Hover effekti: biroz yoritish */
 .user-admin:hover {
-  box-shadow:
-    inset 1px 1px 2px rgba(0, 0, 0, 0.05),
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.05),
     inset -1px -1px 2px rgba(255, 255, 255, 0.6),
-    0 4px 10px rgba(0, 146, 255, 0.2); /* tashqi yengil soyali nurlanish */
+    0 4px 10px rgba(0, 146, 255, 0.2);
 }
 
-/*  Active effekti: ichga bosilgan ko‘rinish */
 .user-admin:active {
-  box-shadow:
-    inset 4px 4px 8px rgba(0, 0, 0, 0.2),
+  box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.2),
     inset -2px -2px 4px rgba(255, 255, 255, 0.5);
-  transform: scale(0.98); /* bosilgandek siqiladi */
+  transform: scale(0.98);
 }
-
 
 .admin-img {
-  width: 40px;
-  height: 40px;
-  border-radius: 6px;
+  width: 36px;
+  height: 36px;
+  border-radius: 5px;
   overflow: hidden;
 }
 
@@ -168,7 +159,7 @@
   width: 180px;
   display: flex;
   flex-direction: column;
-  color: #000000;
+  color: #1e537d;
 }
 
 .user-admin p span:nth-child(1) {
@@ -180,5 +171,123 @@
 .user-admin p span:nth-child(2) {
   font-size: 13px;
   font-weight: 400;
-  color: #7A6C6B;
+  color: #1e527d8f;
+}
+
+/* panel-account000 */
+
+.panel-account {
+  width: 400px;
+  border-radius: 10px;
+  padding: 20px;
+  position: fixed;
+  top: 90px;
+  right: 20px;
+  z-index: 999;
+  transform: translate(100%);
+  opacity: 0;
+  background-color: #fff;
+  box-shadow: 0px 6px 10px rgba(207, 207, 207, 0.46),
+    inset 0px 10px 10px rgba(227, 227, 227, 0.458),
+    inset 0px -10px 10px rgba(128, 128, 128, 0.242);
+    transition: all .5s ease;
+}
+
+.panel-account.accounter {
+  transform: translate(5px);
+  opacity: 1;
+}
+
+.profil-title{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 10px;
+  border-bottom: 1px solid #1e537d;
+  margin-bottom: 10px;
+}
+
+.profil-title h1{
+  color: #1e537d;
+  font-size: 31px;
+  font-weight: 600;
+}
+
+.profil-title button{
+  font-size: 18px;
+  padding: 6px;
+  border-radius: 100px;
+}
+
+.panel-account-user {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 15px;
+  background-color: #fff;
+  cursor: pointer;
+  box-shadow: inset 5px 5px 10px rgba(128, 128, 128, 0.14),
+  inset -2px -2px 5px rgba(128, 128, 128, 0.215);
+  margin-bottom: 10px;
+}
+
+.panel-account-user:hover {
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.05),
+    inset -1px -1px 2px rgba(255, 255, 255, 0.6),
+    0 4px 10px rgba(4, 139, 249, 0.2);
+}
+
+.panel-account-user:active {
+  box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.2),
+    inset -2px -2px 4px rgba(255, 255, 255, 0.5);
+  transform: scale(0.98);
+}
+
+.panel-account-user h3 {
+  font-size: 17px;
+  font-weight: 600;
+  color: #1e537d;
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  width: 76%;
+}
+
+.panel-account-user h3 span {
+  display: inline-block;
+}
+
+.panel-account-user h3 span:nth-child(2) {
+  display: inline-block;
+  color: #1e527d86;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.panel-account-user .users-pictures {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #1e537d;
+}
+
+.users-pictures img {
+  width: 100%;
+  height: 100%;
+}
+
+.panel-account-user svg{
+  font-size: 26px;
+  color: #1e537d;
+}
+
+.panel-account-user:nth-of-type(3){
+  gap: 20px;
+  padding: 15px 20px
 }

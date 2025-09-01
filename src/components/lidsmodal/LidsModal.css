@@ -1,0 +1,40 @@
+.lids-helpers-modal {
+  border-radius: 20px;
+  padding: 20px;
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  top: 0;
+  left: 500px;
+  transform: scale(0);
+  background-color: #fff;
+  box-shadow: 0px 6px 12px rgba(0, 145, 255, 0.267),
+    inset 0px 2px 4px rgba(255, 255, 255, 0.1),
+    inset 0px -2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.lids-plus.finished .lids-helpers-modal {
+  transform: scale(1);
+  top: 10px;
+}
+
+.lids-helpers-modal .over {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 30px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #1e537d;
+  background-color: white;
+  cursor: pointer;
+}
+
+.lids-helpers-modal p {
+  font-size: 18px;
+  font-weight: 500;
+  color: #1e537d;
+  text-align: center;
+  letter-spacing: 1px;
+  line-height: 20px;
+}

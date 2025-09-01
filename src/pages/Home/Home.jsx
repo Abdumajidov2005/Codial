@@ -3,7 +3,7 @@ import "./Home.css";
 
 function Home({ sidebar }) {
   return (
-    <>
+    <div className="home-apps">
       <div className="home-page">
         <div className={`container ${sidebar ? "active" : ""}`}>
           <div className="variable">
@@ -11,7 +11,7 @@ function Home({ sidebar }) {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

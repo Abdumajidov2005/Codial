@@ -14,28 +14,34 @@ import Students from "../students/Students";
 import Davomat from "../davomat/Davomat";
 import Login from "../login/Login";
 import Lids from "../lidlar/Lids";
+import { ToastContainer } from "react-toastify";
 
 function RouterDom() {
   const [sidebar, setSidebar] = useState(false);
+  const [adminPanel, setAdminPanel] = useState(false);
+
+  const [loginWatch, setLoginWatch] = useState(false);
+
 
   return (
     <>
       <BrowserRouter>
-       {/* <Login/> */}
-        <Navbar sidebar={sidebar} />
+        <Login loginWatch={loginWatch} setLoginWatch={setLoginWatch}/>
+         <ToastContainer position="top-right" autoClose={1000} />
+        <Navbar sidebar={sidebar} adminPanel={adminPanel} setAdminPanel={setAdminPanel} setLoginWatch={setLoginWatch}/>
         <Sidebar sidebar={sidebar} setSidebar={setSidebar} />
         <Routes>
           <Route path="/" element={<Home sidebar={sidebar} />} />
-          <Route path="/lids" element={<Lids  sidebar={sidebar}/>}/>
-          <Route path="/managers" element={<Managers sidebar={sidebar}/>}/>
+          <Route path="/lids" element={<Lids sidebar={sidebar} />} />
+          <Route path="/managers" element={<Managers sidebar={sidebar} />} />
           <Route path="/groups" element={<Groups sidebar={sidebar} />} />
-          <Route path="/teachers" element={<Teachers sidebar={sidebar}/>}/>
-          <Route path="/students" element={<Students sidebar={sidebar}/>}/>
+          <Route path="/teachers" element={<Teachers sidebar={sidebar} />} />
+          <Route path="/students" element={<Students sidebar={sidebar} />} />
           <Route path="/schedule" element={<Schedule sidebar={sidebar} />} />
-          <Route path="/davomat" element={<Davomat sidebar={sidebar}/>}/>
+          <Route path="/davomat" element={<Davomat sidebar={sidebar} />} />
           <Route path="/auction" element={<Auction sidebar={sidebar} />} />
-          <Route path="/notice" element={<Notice sidebar={sidebar}/>}/>
-          <Route path="*" element={<Error sidebar={sidebar}/>} />
+          <Route path="/notice" element={<Notice sidebar={sidebar} />} />
+          <Route path="*" element={<Error sidebar={sidebar} />} />
         </Routes>
       </BrowserRouter>
     </>
