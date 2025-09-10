@@ -15,14 +15,14 @@ function Sidebar({ sidebar, setSidebar }) {
   return (
     <>
       <div className={`sidebar ${sidebar ? "active" : ""}`}>
-        <div
+        <button 
           onClick={() => {
             sidebar ? setSidebar(false) : setSidebar(true);
           }}
           className="dashboard"
         >
           {sidebar ? <FaChevronRight /> : <FaChevronLeft />}
-        </div>
+        </button>
         <NavLink to={"/"} className="logo">
           <div className="logo-codial">
             <img src="/imgs/image.png" alt="" />

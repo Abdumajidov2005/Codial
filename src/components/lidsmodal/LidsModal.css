@@ -1,8 +1,7 @@
 .lids-helpers-modal {
   border-radius: 20px;
   padding: 20px;
-  width: 400px;
-  height: 400px;
+  width: 350px;
   position: absolute;
   top: 0;
   left: 500px;
@@ -18,16 +17,15 @@
   top: 10px;
 }
 
-.lids-helpers-modal .over {
+.close-modal{
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 10px 30px;
-  font-size: 18px;
-  font-weight: 500;
-  color: #1e537d;
-  background-color: white;
-  cursor: pointer;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.lids-helpers-modal .over {
+  padding: 14px 30px;
 }
 
 .lids-helpers-modal p {
@@ -37,4 +35,5 @@
   text-align: center;
   letter-spacing: 1px;
   line-height: 20px;
+  margin-bottom: 10px;
 }

@@ -22,6 +22,8 @@ function Lids({ sidebar }) {
 
   const [nextPage, setNextPage] = useState(false);
 
+  const [addTolidsUsers, setAddToLidsUsers] = useState(false);
+
   const ITEM_HEIGHT = 83;
   const ITEM_PADDING_TOP = 8;
 
@@ -277,7 +279,8 @@ function Lids({ sidebar }) {
   //  ===============================================================================
 
   const [openingSourcing, setOpeningSourcing] = useState(false);
-  const [selectionSourcing, setSelectionSourcing] = useState("Manbani tanlang...");
+  const [selectionSourcing, setSelectionSourcing] =
+    useState("Manbani tanlang...");
   const [searchSourcing, setSearchSourcing] = useState("");
   const refSourcing = useRef(null);
   const optionRefSourcing = useRef(null);
@@ -314,6 +317,68 @@ function Lids({ sidebar }) {
       document.removeEventListener("mousedown", handleClickOutsideSourcing);
     };
   }, [setOpeningSourcing]);
+
+  // ====================================================================================
+
+  const lidListGroup = [
+    {
+      id: 0,
+      tr: 1,
+      murojaatchi: "Abdumajidov O'tkirbek",
+      taglar: "Ijtimoiy tarmoq",
+      kurs: "Frontend",
+      yosh: "18-20",
+      holati: "talaba",
+      noutbuki: "bor",
+      hafta: "duy,chor,jum",
+      dars: "18-00, 21-00",
+      status: "qayta bog'lanishga",
+      manba: "telelgram",
+    },
+    {
+      id: 1,
+      tr: 2,
+      murojaatchi: "Abdumajidov O'tkirbek",
+      taglar: "Ijtimoiy tarmoq",
+      kurs: "Frontend",
+      yosh: "18-20",
+      holati: "talaba",
+      noutbuki: "bor",
+      hafta: "duy,chor,jum",
+      dars: "18-00, 21-00",
+      status: "qayta bog'lanishga",
+      manba: "telelgram",
+    },
+    {
+      id: 2,
+      tr: 3,
+      murojaatchi: "Abdumajidov O'tkirbek",
+      taglar: "Ijtimoiy tarmoq",
+      kurs: "Frontend",
+      yosh: "18-20",
+      holati: "talaba",
+      noutbuki: "bor",
+      hafta: "duy,chor,jum",
+      dars: "18-00, 21-00",
+      status: "qayta bog'lanishga",
+      manba: "telelgram",
+    },
+    {
+      id: 3,
+      tr: 4,
+      murojaatchi: "Abdumajidov O'tkirbek",
+      taglar: "Ijtimoiy tarmoq",
+      kurs: "Frontend",
+      yosh: "18-20",
+      holati: "talaba",
+      noutbuki: "bor",
+      hafta: "duy,chor,jum",
+      dars: "18-00, 21-00",
+      status: "qayta bog'lanishga",
+      manba: "telelgram",
+    },
+    
+  ];
 
   return (
     <>
@@ -601,7 +666,7 @@ function Lids({ sidebar }) {
                     {/* Options */}
                     <div
                       ref={ref}
-                      className={`options ${opening ? "show" : ""}`}
+                      className={`options1 ${opening ? "show" : ""}`}
                     >
                       {/* Search input */}
                       <input
@@ -747,14 +812,18 @@ function Lids({ sidebar }) {
                       onClick={() => setOpeningSourcing(!openingSourcing)}
                     >
                       {selectionSourcing}
-                      
-                      <span className={`arrow ${openingSourcing ? "up" : "down"}`} />
+
+                      <span
+                        className={`arrow ${openingSourcing ? "up" : "down"}`}
+                      />
                     </div>
 
                     {/* Options */}
                     <div
                       ref={refSourcing}
-                      className={`options sourcing ${openingSourcing ? "show" : ""}`}
+                      className={`options sourcing ${
+                        openingSourcing ? "show" : ""
+                      }`}
                     >
                       {/* Search input */}
                       <input
@@ -894,6 +963,7 @@ function Lids({ sidebar }) {
                   <button
                     onClick={() => {
                       setZoomPlus((prev) => !prev);
+                      setAddToLidsUsers((prev) => !prev);
                     }}
                     className="zoom"
                   >
@@ -901,65 +971,121 @@ function Lids({ sidebar }) {
                   </button>
                 </div>
               </div>
+
               <h3 className="status">Status</h3>
 
-              <ul className="status-bar">
-                <li
-                  onClick={() => {
-                    {
-                      setShorten((prev) => !prev);
-                    }
-                  }}
-                >
-                  Barchasi
-                  {shorten ? <FaChevronDown /> : <FaChevronRight />}
-                </li>
-                <ul className={`shortcut ${shorten ? "cutting" : ""}`}>
-                  <li>
-                    <p>
-                      Qayta bog'lanishga <span>20</span>
-                    </p>
-                    <FaChevronRight />
+              <div className="status-bases">
+                <ul className={`status-bar ${addTolidsUsers ? "enlarge" : ""}`}>
+                  <li
+                    onClick={() => {
+                      {
+                        setShorten((prev) => !prev);
+                      }
+                    }}
+                  >
+                    Barchasi
+                    {shorten ? <FaChevronDown /> : <FaChevronRight />}
                   </li>
-                  <li>
-                    <p>
-                      Sinov darsga yozildi <span>20</span>
-                    </p>{" "}
-                    <FaChevronRight />
-                  </li>
-                  <li>
-                    <p>
-                      {" "}
-                      Sinov darsga qatnashdi <span>100</span>{" "}
-                    </p>{" "}
-                    <FaChevronRight />
-                  </li>
-                  <li>
-                    <p>
-                      O'qishni boshladi <span>0</span>{" "}
-                    </p>{" "}
-                    <FaChevronRight />
-                  </li>
-                  <li>
-                    <p>
-                      Ma'qul kelmadi <span>0</span>{" "}
-                    </p>{" "}
-                    <FaChevronRight />
-                  </li>
-                  <li>
-                    <p>
-                      Ma'qul kelmadi(Sifatsiz) <span>0</span>{" "}
-                    </p>{" "}
-                    <FaChevronRight />
-                  </li>
-                  <li>
-                    <p>
-                      Keyinroq o'qiydi <span>0</span>{" "}
-                    </p>{" "}
-                    <FaChevronRight />
-                  </li>
+                  <ul className={`shortcut ${shorten ? "cutting" : ""}`}>
+                    <li>
+                      <p>
+                        Qayta bog'lanishga <span>20</span>
+                      </p>
+                      <FaChevronRight />
+                    </li>
+                    <li>
+                      <p>
+                        Sinov darsga yozildi <span>20</span>
+                      </p>{" "}
+                      <FaChevronRight />
+                    </li>
+                    <li>
+                      <p>
+                        {" "}
+                        Sinov darsga qatnashdi <span>100</span>{" "}
+                      </p>{" "}
+                      <FaChevronRight />
+                    </li>
+                    <li>
+                      <p>
+                        O'qishni boshladi <span>0</span>{" "}
+                      </p>{" "}
+                      <FaChevronRight />
+                    </li>
+                    <li>
+                      <p>
+                        Ma'qul kelmadi <span>0</span>{" "}
+                      </p>{" "}
+                      <FaChevronRight />
+                    </li>
+                    <li>
+                      <p>
+                        Ma'qul kelmadi(Sifatsiz) <span>0</span>{" "}
+                      </p>{" "}
+                      <FaChevronRight />
+                    </li>
+                    <li>
+                      <p>
+                        Keyinroq o'qiydi <span>0</span>{" "}
+                      </p>{" "}
+                      <FaChevronRight />
+                    </li>
+                  </ul>
                 </ul>
-              </ul>
+                <div
+                  className={`user-info-main ${
+                    addTolidsUsers ? "enlarge" : ""
+                  }`}
+                >
+                  <div className="user-info-main-contest">
+                    <div className="user-info-main-content">
+                      <p>T/R</p>
+                      <p>Murojaatchi</p>
+                      <p>Taglar</p>
+                      <p>Kurs</p>
+                      <p>Yosh guruhi</p>
+                      <p>Ijtimoiy holati</p>
+                      <p>Noutbuki bormi</p>
+                      <p>Hafta kunlari</p>
+                      <p>Dars vaqti</p>
+                      <p>Status</p>
+                      <p>Manba</p>
+                    </div>
+                    <div className="user-info-main-list-border">
+                      {lidListGroup?.map((item) => {
+                        return (
+                          <ul className="user-info-main-list">
+                            <li>{item?.tr}</li>
+                            <li>{item?.murojaatchi}</li>
+                            <li>{item?.taglar}</li>
+                            <li>{item?.kurs}</li>
+                            <li>{item?.yosh}</li>
+                            <li>{item?.holati}</li>
+                            <li>{item?.noutbuki}</li>
+                            <li>{item?.hafta}</li>
+                            <li>{item?.dars}</li>
+                            <li>{item?.status.length > 18 ? item?.status.slice(0, 16)+"...": item?.status}</li>
+                            <li>{item?.manba.length > 18 ? item?.manba.slice(0, 16)+"...": item?.manba}</li>
+                          </ul>
+                        );
+                      })}
+
+                      {/* <ul className="user-info-main-list">
+                        <li>dasfsdh</li>
+                        <li>dasfsdh</li>
+                        <li>dasfsdh</li>
+                        <li>dasfsdh</li>
+                        <li>dasfsdh</li>
+                        <li>dasfsdh</li>
+                        <li>dasfsdh</li>
+                        <li>dasfsdh</li>
+                        <li>dasfsdh</li>
+                        <li>dasfsdh</li>
+                      </ul> */}
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div className="lids-statistiks">
               <div className="lids-statistik">
