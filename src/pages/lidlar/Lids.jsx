@@ -14,6 +14,8 @@ import LidsModal from "../../components/lidsmodal/LidsModal";
 
 function Lids({ sidebar }) {
   const [zoomPlus, setZoomPlus] = useState(false);
+  const [zoomPlus1, setZoomPlus1] = useState(false);
+  const [zoomPlus2, setZoomPlus2] = useState(false);
   const [shorten, setShorten] = useState(false);
   const [shorten2, setShorten2] = useState(false);
   const [shorten3, setShorten3] = useState(false);
@@ -320,6 +322,32 @@ function Lids({ sidebar }) {
 
   // ====================================================================================
 
+  const lidContent = [
+    "T/R",
+    "Murojaatchi",
+    "Taglar",
+    "Kurs",
+    "Yosh guruhi",
+    "Ijtimoiy holati",
+    "Noutbuki bormi",
+    "Manba",
+    "Hafta kunlari",
+    "Ma'qul dars vaqti",
+    "Status",
+    "Guruh",
+    "Sinov dars kuni",
+    "Sinov darsga qatnashdimi",
+    "Qo'shilgan vaqt",
+    "Qo'shgan shaxs",
+    "Oxirgi o'zgarish vaqti",
+    "Oxirgi o'zgartirdi",
+    "Lid izohlari",
+    "Shartnoma statusi",
+    "Oy",
+    "Yil",
+    "Oyga to'lovlar",
+  ];
+
   const lidListGroup = [
     {
       id: 0,
@@ -332,53 +360,24 @@ function Lids({ sidebar }) {
       noutbuki: "bor",
       hafta: "duy,chor,jum",
       dars: "18-00, 21-00",
-      status: "qayta bog'lanishga",
       manba: "telelgram",
-    },
-    {
-      id: 1,
-      tr: 2,
-      murojaatchi: "Abdumajidov O'tkirbek",
-      taglar: "Ijtimoiy tarmoq",
-      kurs: "Frontend",
-      yosh: "18-20",
-      holati: "talaba",
-      noutbuki: "bor",
-      hafta: "duy,chor,jum",
-      dars: "18-00, 21-00",
       status: "qayta bog'lanishga",
-      manba: "telelgram",
+      guruh: "frontend20",
+      sinovD: "04/05/2025",
+      darsgaQatnashdimi: "ha",
+      qoshilganVaqt: "34/54/3243",
+      qoshganShaxs: "codialinfo@gmail.com",
+      ozgartirilganVaqt: "324/423/4234",
+      oxiriOzgartirdi: "Codial admin",
+      lidIzoh: "Lidizoh",
+      shartnoma: "tuzilmagan",
+      oy: "iyul",
+      yil: "2025",
+      oygaTolov: "oyga tolovlar",
     },
-    {
-      id: 2,
-      tr: 3,
-      murojaatchi: "Abdumajidov O'tkirbek",
-      taglar: "Ijtimoiy tarmoq",
-      kurs: "Frontend",
-      yosh: "18-20",
-      holati: "talaba",
-      noutbuki: "bor",
-      hafta: "duy,chor,jum",
-      dars: "18-00, 21-00",
-      status: "qayta bog'lanishga",
-      manba: "telelgram",
-    },
-    {
-      id: 3,
-      tr: 4,
-      murojaatchi: "Abdumajidov O'tkirbek",
-      taglar: "Ijtimoiy tarmoq",
-      kurs: "Frontend",
-      yosh: "18-20",
-      holati: "talaba",
-      noutbuki: "bor",
-      hafta: "duy,chor,jum",
-      dars: "18-00, 21-00",
-      status: "qayta bog'lanishga",
-      manba: "telelgram",
-    },
-    
   ];
+
+  const[exitTop, setExitTop] = useState(false)
 
   return (
     <>
@@ -898,8 +897,6 @@ function Lids({ sidebar }) {
                 onChange={(e) => setNewName(e.target.value)}
                 required
               />
-
-              {/* <button >Qo‘shish</button> */}
             </li>
             <li>
               <label htmlFor="">Familya:</label>
@@ -949,7 +946,7 @@ function Lids({ sidebar }) {
       <div className="lids">
         <div className={`container ${sidebar ? "active" : ""}`}>
           <div className="variable">
-            <div className={`lids-add-content ${zoomPlus ? "zooms" : ""}`}>
+            <div className={`lids-add-content ${zoomPlus ? "zooms" : ""} ${zoomPlus1 || zoomPlus2 ? "zooms12" : ""}`}>
               <div className="lids-title">
                 <h4>Lids</h4>
                 <div className="expand">
@@ -960,14 +957,23 @@ function Lids({ sidebar }) {
                   >
                     Qo'shish
                   </button>
-                  <button
-                    onClick={() => {
-                      setZoomPlus((prev) => !prev);
-                      setAddToLidsUsers((prev) => !prev);
-                    }}
-                    className="zoom"
-                  >
-                    {zoomPlus ? <HiXMark /> : <CgArrowsExpandRight />}
+
+                  <button className="zoom">
+                    {zoomPlus ? (
+                      <HiXMark
+                        onClick={() => {
+                          setZoomPlus(false);
+                          setAddToLidsUsers(false);
+                        }}
+                      />
+                    ) : (
+                      <CgArrowsExpandRight
+                        onClick={() => {
+                          setZoomPlus(true);
+                          setAddToLidsUsers(true);
+                        }}
+                      />
+                    )}
                   </button>
                 </div>
               </div>
@@ -987,47 +993,81 @@ function Lids({ sidebar }) {
                     {shorten ? <FaChevronDown /> : <FaChevronRight />}
                   </li>
                   <ul className={`shortcut ${shorten ? "cutting" : ""}`}>
-                    <li>
+                    <li
+                      onClick={() => {
+                        setZoomPlus(true);
+                        setAddToLidsUsers(true);
+                      }}
+                    >
                       <p>
                         Qayta bog'lanishga <span>20</span>
                       </p>
                       <FaChevronRight />
                     </li>
-                    <li>
+                    <li
+                      onClick={() => {
+                        setZoomPlus(true);
+                        setAddToLidsUsers(true);
+                      }}
+                    >
                       <p>
                         Sinov darsga yozildi <span>20</span>
-                      </p>{" "}
+                      </p>
                       <FaChevronRight />
                     </li>
-                    <li>
+                    <li
+                      onClick={() => {
+                        setZoomPlus(true);
+                        setAddToLidsUsers(true);
+                      }}
+                    >
                       <p>
-                        {" "}
-                        Sinov darsga qatnashdi <span>100</span>{" "}
-                      </p>{" "}
+                        Sinov darsga qatnashdi <span>100</span>
+                      </p>
                       <FaChevronRight />
                     </li>
-                    <li>
+                    <li
+                      onClick={() => {
+                        setZoomPlus(true);
+                        setAddToLidsUsers(true);
+                      }}
+                    >
                       <p>
-                        O'qishni boshladi <span>0</span>{" "}
-                      </p>{" "}
+                        O'qishni boshladi <span>0</span>
+                      </p>
                       <FaChevronRight />
                     </li>
-                    <li>
+                    <li
+                      onClick={() => {
+                        setZoomPlus(true);
+                        setAddToLidsUsers(true);
+                      }}
+                    >
                       <p>
-                        Ma'qul kelmadi <span>0</span>{" "}
-                      </p>{" "}
+                        Ma'qul kelmadi <span>0</span>
+                      </p>
                       <FaChevronRight />
                     </li>
-                    <li>
+                    <li
+                      onClick={() => {
+                        setZoomPlus(true);
+                        setAddToLidsUsers(true);
+                      }}
+                    >
                       <p>
-                        Ma'qul kelmadi(Sifatsiz) <span>0</span>{" "}
-                      </p>{" "}
+                        Ma'qul kelmadi(Sifatsiz) <span>0</span>
+                      </p>
                       <FaChevronRight />
                     </li>
-                    <li>
+                    <li
+                      onClick={() => {
+                        setZoomPlus(true);
+                        setAddToLidsUsers(true);
+                      }}
+                    >
                       <p>
-                        Keyinroq o'qiydi <span>0</span>{" "}
-                      </p>{" "}
+                        Keyinroq o'qiydi <span>0</span>
+                      </p>
                       <FaChevronRight />
                     </li>
                   </ul>
@@ -1039,67 +1079,85 @@ function Lids({ sidebar }) {
                 >
                   <div className="user-info-main-contest">
                     <div className="user-info-main-content">
-                      <p>T/R</p>
-                      <p>Murojaatchi</p>
-                      <p>Taglar</p>
-                      <p>Kurs</p>
-                      <p>Yosh guruhi</p>
-                      <p>Ijtimoiy holati</p>
-                      <p>Noutbuki bormi</p>
-                      <p>Hafta kunlari</p>
-                      <p>Dars vaqti</p>
-                      <p>Status</p>
-                      <p>Manba</p>
+                      {lidContent?.map((item, index) => {
+                        return <p key={index}>{item}</p>;
+                      })}
                     </div>
                     <div className="user-info-main-list-border">
                       {lidListGroup?.map((item) => {
                         return (
-                          <ul className="user-info-main-list">
+                          <ul key={item?.id} className="user-info-main-list">
                             <li>{item?.tr}</li>
-                            <li>{item?.murojaatchi}</li>
+                            <li>
+                              {item?.murojaatchi.length > 22
+                                ? item?.murojaatchi.slice(0, 20) + "..."
+                                : item?.murojaatchi}
+                            </li>
                             <li>{item?.taglar}</li>
                             <li>{item?.kurs}</li>
                             <li>{item?.yosh}</li>
                             <li>{item?.holati}</li>
                             <li>{item?.noutbuki}</li>
+                            <li>
+                              {item?.manba.length > 18
+                                ? item?.manba.slice(0, 16) + "..."
+                                : item?.manba}
+                            </li>
                             <li>{item?.hafta}</li>
                             <li>{item?.dars}</li>
-                            <li>{item?.status.length > 18 ? item?.status.slice(0, 16)+"...": item?.status}</li>
-                            <li>{item?.manba.length > 18 ? item?.manba.slice(0, 16)+"...": item?.manba}</li>
+                            <li>
+                              {item?.status.length > 18
+                                ? item?.status.slice(0, 16) + "..."
+                                : item?.status}
+                            </li>
+                            <li>{item?.guruh}</li>
+                            <li>{item?.sinovD}</li>
+                            <li>{item?.darsgaQatnashdimi}</li>
+                            <li>{item?.qoshilganVaqt}</li>
+                            <li>{item?.qoshganShaxs}</li>
+                            <li>{item?.ozgartirilganVaqt}</li>
+                            <li>{item?.oxiriOzgartirdi}</li>
+                            <li>{item?.lidIzoh}</li>
+                            <li>{item?.shartnoma}</li>
+                            <li>{item?.oy}</li>
+                            <li>{item?.yil}</li>
+                            <li>{item?.oygaTolov}</li>
                           </ul>
                         );
                       })}
-
-                      {/* <ul className="user-info-main-list">
-                        <li>dasfsdh</li>
-                        <li>dasfsdh</li>
-                        <li>dasfsdh</li>
-                        <li>dasfsdh</li>
-                        <li>dasfsdh</li>
-                        <li>dasfsdh</li>
-                        <li>dasfsdh</li>
-                        <li>dasfsdh</li>
-                        <li>dasfsdh</li>
-                        <li>dasfsdh</li>
-                      </ul> */}
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="lids-statistiks">
-              <div className="lids-statistik">
+            <div
+              className={`lids-statistiks ${
+                zoomPlus1 || zoomPlus2 ? "zooms1" : ""
+              }`}
+            >
+              <div className={`lids-statistik ${zoomPlus1 ? "maximize" : ""} ${exitTop ? "maximize2":""}`}>
                 <div className="lids-title">
                   <h4>Lidlar(Statistika)</h4>
                   <div className="expand">
                     <button className="zoom">
-                      {/* {zoomPlus ? <HiXMark /> : <CgArrowsExpandRight />} */}
-                      <CgArrowsExpandRight />
+                      {zoomPlus1 ? (
+                        <HiXMark
+                          onClick={() => {
+                            setZoomPlus1(false);
+                          }}
+                        />
+                      ) : (
+                        <CgArrowsExpandRight
+                          onClick={() => {
+                            setZoomPlus1(true);
+                          }}
+                        />
+                      )}
                     </button>
                   </div>
                 </div>
                 <h3 className="status">Yil</h3>
-                <ul className="status-bar">
+                <div className="status-bar">
                   <li
                     onClick={() => {
                       {
@@ -1114,7 +1172,7 @@ function Lids({ sidebar }) {
                     <li>
                       <p>
                         2025 <span>20</span>
-                      </p>{" "}
+                      </p>
                       <FaChevronRight />
                     </li>
                     <li>
@@ -1136,15 +1194,28 @@ function Lids({ sidebar }) {
                       <FaChevronRight />
                     </li>
                   </ul>
-                </ul>
+                </div>
               </div>
-              <div className="lids-payings">
+              <div className={`lids-payings ${zoomPlus2 ? "maximize1":""}`}>
                 <div className="lids-title">
                   <h4>Lidlar(To'lov Qilganlar)</h4>
                   <div className="expand">
                     <button className="zoom">
-                      {/* {zoomPlus ? <HiXMark /> : <CgArrowsExpandRight />} */}
-                      <CgArrowsExpandRight />
+                      {zoomPlus2 ? (
+                        <HiXMark
+                          onClick={() => {
+                            setZoomPlus2(false);
+                            setExitTop(false)
+                          }}
+                        />
+                      ) : (
+                        <CgArrowsExpandRight
+                          onClick={() => {
+                            setZoomPlus2(true);
+                            setExitTop(true)
+                          }}
+                        />
+                      )}
                     </button>
                   </div>
                 </div>
